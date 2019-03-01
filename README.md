@@ -1,7 +1,7 @@
 backpack
 ==============================================================================
 
-[Short description of the addon.]
+Experimenting with the bleeding edge of Ember.js.
 
 
 Compatibility
