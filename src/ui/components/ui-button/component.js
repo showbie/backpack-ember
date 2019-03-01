@@ -1,4 +1,3 @@
 import Component from '@ember/component';
 
-export default class UiButtonComponent extends Component {
-}
+export default class UiButtonComponent extends Component {}

@@ -9,5 +9,5 @@ let moduleConfig = buildResolverConfig(config.modulePrefix);
  */
 
 export default Resolver.extend({
-  config: moduleConfig
+  config: moduleConfig,
 });
