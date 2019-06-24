@@ -1,7 +1,5 @@
 'use strict';
 
-// disabling this rule only required when depending on ember-cli#SHA
-// eslint-disable-next-line node/no-unpublished-require
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {

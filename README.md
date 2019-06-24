@@ -1,4 +1,4 @@
-backpack
+@showbie/backpack
 ==============================================================================
 
 Experimenting with the bleeding edge of Ember.js.
@@ -9,13 +9,14 @@ Compatibility
 
 * Ember.js v2.18 or above
 * Ember CLI v2.13 or above
+* Node.js v8 or above
 
 
 Installation
 ------------------------------------------------------------------------------
 
 ```
-ember install backpack
+ember install @showbie/backpack
 ```
 
 

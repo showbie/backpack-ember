@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@showbie/backpack",
-  "description": "Small description for backpack goes here",
+  "description": "Small description for @showbie/backpack goes here",
   "license": "MIT",
   "author": "Showbie (https://www.showbie.com)",
   "maintainers": [
@@ -18,48 +18,51 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "prettier-eslint '**/*.js' --write",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember test",
+    "test:all": "ember try:each"
   },
   "dependencies": {
-    "@ember-decorators/babel-transforms": "5.1.x",
-    "ember-cli-babel": "7.5.0",
+    "ember-cli-babel": "7.7.3",
     "ember-cli-htmlbars": "3.0.1"
   },
   "devDependencies": {
     "@ember/optional-features": "0.7.x",
-    "@glimmer/component": "0.14.0-alpha.3",
+    "@ember/render-modifiers": "1.0.x",
+    "@glimmer/component": "0.14.0-alpha.7",
     "@showbie/eslint-config": "0.3.x",
-    "babel-eslint": "10.0.x",
+    "babel-eslint": "8.0.x",
     "broccoli-asset-rev": "3.0.x",
-    "ember-auto-import": "1.2.x",
-    "ember-cli": "github:ember-cli/ember-cli#c67c5c56756f856dd8566932d4965dd38a160842",
-    "ember-cli-app-version": "3.2.x",
+    "ember-auto-import": "1.3.x",
+    "ember-cli": "github:ember-cli/ember-cli#3dd23807c744c136a015a1c3e780fb5a61ba2826",
     "ember-cli-dependency-checker": "3.1.x",
     "ember-cli-eslint": "5.1.x",
+    "ember-cli-htmlbars": "3.0.x",
     "ember-cli-htmlbars-inline-precompile": "2.1.x",
     "ember-cli-inject-live-reload": "2.0.x",
     "ember-cli-sri": "2.1.x",
     "ember-cli-template-lint": "1.0.0-beta.1",
     "ember-cli-uglify": "2.1.x",
-    "ember-decorators": "5.1.x",
+    "ember-disable-prototype-extensions": "1.1.x",
     "ember-export-application-global": "2.0.x",
-    "ember-load-initializers": "2.0.0",
-    "ember-maybe-import-regenerator": "0.1.6",
+    "ember-load-initializers": "2.0.x",
+    "ember-maybe-import-regenerator": "0.1.x",
     "ember-qunit": "4.4.x",
-    "ember-resolver": "5.1.3",
-    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/06a12bee2819e8bb5b0d62e3cd0fdb64a905329c.tgz",
+    "ember-resolver": "5.1.x",
+    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/1493634dc8b249509cab24904e933c75c70a171e.tgz",
+    "ember-source-channel-url": "2.0.x",
+    "ember-try": "1.2.x",
+    "ember-welcome-page": "4.0.x",
     "eslint-plugin-ember": "6.2.x",
-    "eslint-plugin-node": "8.0.x",
-    "loader.js": "4.7.0",
+    "eslint-plugin-node": "9.0.x",
+    "loader.js": "4.7.x",
     "prettier-eslint-cli": "4.7.x",
-    "qunit-dom": "0.8.x",
-    "sparkles-component": "1.3.x"
+    "qunit-dom": "0.8.x"
   },
   "keywords": [
     "ember-addon"
   ],
   "engines": {
-    "node": "6.* || 8.* || >= 10.*"
+    "node": "8.* || >= 10.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
