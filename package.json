@@ -15,14 +15,15 @@
   },
   "scripts": {
     "build": "ember build",
+    "format:js": "prettier-eslint '**/*.js' --write",
     "lint:hbs": "ember-template-lint .",
-    "lint:js": "prettier-eslint '**/*.js' --write",
+    "lint:js": "prettier-eslint '**/*.js' --list-different",
     "start": "ember serve",
     "test": "ember test",
     "test:all": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "7.7.3",
+    "ember-cli-babel": "7.8.0",
     "ember-cli-htmlbars": "3.0.1"
   },
   "devDependencies": {
@@ -42,7 +43,6 @@
     "ember-cli-sri": "2.1.x",
     "ember-cli-template-lint": "1.0.0-beta.1",
     "ember-cli-uglify": "2.1.x",
-    "ember-disable-prototype-extensions": "1.1.x",
     "ember-export-application-global": "2.0.x",
     "ember-load-initializers": "2.0.x",
     "ember-maybe-import-regenerator": "0.1.x",
@@ -52,6 +52,7 @@
     "ember-source-channel-url": "2.0.x",
     "ember-try": "1.2.x",
     "ember-welcome-page": "4.0.x",
+    "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-ember": "6.2.x",
     "eslint-plugin-node": "9.0.x",
     "loader.js": "4.7.x",
