@@ -1,1 +1,3 @@
-export { default } from '@showbie/backpack/components/ui-button/component';
+export {
+  default,
+} from '@showbie/backpack-ember/components/ui-button/component';

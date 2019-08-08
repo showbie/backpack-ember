@@ -1,1 +1,1 @@
-export { default } from './template';
+export { default } from '@showbie/backpack-ember/components/ui-button/template';
