@@ -1,1 +1,9 @@
-{{yield}}
+<button
+  ...attributes
+  aria-label={{this.a11yLabel}}
+  type={{this.type}}
+  disabled={{this.disabled}}
+  {{on "click" this.onclick}}
+>
+  {{yield}}
+</button>

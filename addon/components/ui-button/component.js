@@ -1,8 +1,10 @@
-// import { action, computed } from '@ember/object';
+import { action } from '@ember/object';
+import { or } from '@ember/object/computed';
 import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
 
 export default class UiButton extends Component {
-  a11yLabel = '';
+  a11yLabel = null;
 
   type = 'button';
 
@@ -12,8 +14,11 @@ export default class UiButton extends Component {
 
   isDisabled = false;
 
-  // @computed('isDisabled', 'isRunning')
-  get disabled() {
-    return this.isDisabled || this.isRunning;
+  @or('isDisabled', 'isRunning')
+  disabled;
+
+  @action
+  onclick(e) {
+    console.log(e);
   }
 }

@@ -4,7 +4,8 @@ import { storiesOf } from '@storybook/ember';
 storiesOf('Button', module).add('default', () => {
   return {
     template: hbs`
-        <UiButton>Default</UiButton>
+        <UiButton @a11yLabel="helpful text">Default</UiButton>
+        <UiButton @type="submit" @isDisabled=true>Disabled</UiButton>
       `,
   };
 });
