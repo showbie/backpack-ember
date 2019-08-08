@@ -1,18 +1,23 @@
 import { action } from '@ember/object';
 import { or } from '@ember/object/computed';
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
 
 export default class UiButton extends Component {
-  a11yLabel = null;
+  get appearance() {
+    return this.args.appearance || 'default';
+  }
 
-  type = 'button';
+  get isDestructive() {
+    return this.args.isDestructive || false;
+  }
 
-  appearance = 'default';
+  get isDisabled() {
+    return this.args.isDisabled || false;
+  }
 
-  isDestructive = false;
-
-  isDisabled = false;
+  get isRunning() {
+    return this.args.isRunning || false;
+  }
 
   @or('isDisabled', 'isRunning')
   disabled;
