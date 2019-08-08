@@ -1,4 +1,4 @@
-import { action, computed } from '@ember/object';
+// import { action, computed } from '@ember/object';
 import Component from '@glimmer/component';
 
 export default class UiButton extends Component {
@@ -12,7 +12,7 @@ export default class UiButton extends Component {
 
   isDisabled = false;
 
-  @computed('isDisabled', 'isRunning')
+  // @computed('isDisabled', 'isRunning')
   get disabled() {
     return this.isDisabled || this.isRunning;
   }
