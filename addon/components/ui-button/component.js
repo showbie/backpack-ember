@@ -1,10 +1,16 @@
-import { action } from '@ember/object';
+import { action, computed } from '@ember/object';
 import { or } from '@ember/object/computed';
 import Component from '@glimmer/component';
+
+import cx from 'classnames';
 
 export default class UiButton extends Component {
   get appearance() {
     return this.args.appearance || 'default';
+  }
+
+  get size() {
+    return this.args.size || 'lg';
   }
 
   get isDestructive() {
@@ -21,6 +27,20 @@ export default class UiButton extends Component {
 
   @or('isDisabled', 'isRunning')
   disabled;
+
+  @computed('appearance', 'size')
+  get componentClass() {
+    let appearance = this.appearance;
+    let size = this.size;
+
+    return cx({
+      'ui-button': true,
+      [`ui-button--${appearance}`]: appearance !== 'default',
+      [`ui-button--${size}`]: true,
+      // 'is-destructive': isDestructive,
+      // 'is-hovered': isHovered,
+    });
+  }
 
   @action
   onclick(e) {

@@ -1,9 +1,11 @@
 <button
-  class="ui-button"
+  class={{this.componentClass}}
   type="button"
   ...attributes
   disabled={{this.disabled}}
   {{on "click" this.onclick}}
 >
-  {{yield}}
+  <div class="ui-button__container">
+    {{yield}}
+  </div>
 </button>
