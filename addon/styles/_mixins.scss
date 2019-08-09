@@ -1,0 +1,19 @@
+@mixin ui-btn-style($background-color, $text-color) {
+  background-color: $background-color;
+  color: $text-color;
+
+  &:hover,
+  &:focus {
+    background-color: sbe-hover($background-color);
+  }
+
+  &:disabled,
+  &:disabled:hover,
+  &:disabled:focus {
+    color: rgba($text-color, 0.5);
+  }
+
+  &.ui-button--outlined {
+    border: 1px solid $text-color;
+  }
+}

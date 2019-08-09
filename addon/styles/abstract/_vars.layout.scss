@@ -1,0 +1,36 @@
+////
+/// Dimension variables
+///
+/// @group branding.variables
+////
+
+////
+/// Breakpoints
+///
+/// @group branding.variables.layout
+////
+
+$bp-sm: 448px !default;
+$bp-md: 640px !default;
+$bp-lg: 1024px !default;
+$bp-xl: 1280px !default;
+
+////
+/// Panel sizes
+///
+/// @group branding.variables.layout
+////
+
+$size-master-width-min: 320px !default;
+$size-master-width: 31.25vw !default;
+$size-master-width-max: 428px !default;
+$size-detail-width-max: 920px !default;
+$size-navbar-height: 4rem !default;
+$size-header-height: 6rem !default;
+$size-master-width-legacy: 360px !default; // TODO: remove this
+$size-pinned-bubble-width-max: 328px !default;
+
+$size-avatar-width: 40px !default;
+
+$padding-panel: 25px !default;
+$radius-popover: 10px !default;

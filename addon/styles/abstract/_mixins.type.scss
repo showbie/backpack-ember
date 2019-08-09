@@ -1,0 +1,91 @@
+
+// Type Mixins
+// ===
+//
+// `title` eg. usage: filenames in the post listing
+// `body` eg. usage: titles in master cell, bubble text in the post listing
+// `meta` eg. usage: due dates in assignment master cell, author details in the post listing
+//
+// | tag | name      | sm (1rem=12px)  | md (1rem=12px) | lg (1rem=14px) |
+// |---------------------------------------------------------------------|
+// | h1  | header    | 21/24   Heavy   | 21/24 Heavy    | 22/28 Heavy    |
+// | h1  | header    | 21/24   Book    | 21/24 Book     | 22/28 Book     |
+// | h2  | subheader | 18/24   Black   | 18/24 Black    | 19/28 Black    |
+// | h3  | title     | 17/20   Black   | 18/24 Black    | 19/28 Black    |
+// | p   | body      | 17/24   Book    | 17/24 Book     | 18/28 Book     |
+// | p   | meta      | 12/15   Roman   | 15/20 Roman    | 16/24 Roman    |
+
+@mixin type-header($bold: true) {
+  $font-weight: if($bold, 800, 400);
+
+  color: $black;
+  font-size: 21px;
+  font-weight: $font-weight;
+  line-height: 24px;
+}
+
+@mixin type-subheader() {
+  color: $black;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 2rem;
+
+  @include bp(large) {
+    font-size: 19px;
+  }
+}
+
+@mixin type-title() {
+  color: $black;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 20px;
+
+  @include bp(medium) {
+    font-size: 18px;
+    line-height: 2rem;
+  }
+
+  @include bp(large) {
+    font-size: 19px;
+  }
+}
+
+@mixin type-body() {
+  color: $black;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 2rem;
+
+  @include bp(large) {
+    font-size: 18px;
+  }
+
+  strong {
+    font-weight: 900;
+  }
+}
+
+@mixin type-meta($include-sm: true) {
+  color: $color-gray-text;
+  font-weight: 500;
+
+  @if $include-sm {
+    font-size: 12px;
+    line-height: 15px;
+
+    @include bp(medium) {
+      font-size: 15px;
+      line-height: 20px;
+    }
+
+  } @else {
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  @include bp(large) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

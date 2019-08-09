@@ -1,0 +1,253 @@
+.ui-button {
+  @include transition-bg();
+
+  display: inline-block;
+  border: 0;
+  border-radius: $ui-btn-border-radius;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+
+  .x-icon {
+    fill: $color-white;
+  }
+
+  .ui-spinner {
+    visibility: hidden;
+  }
+}
+
+.ui-button--fixed-size {
+  flex-grow: 0;
+}
+
+.ui-button__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-button__icon-wrapper {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui-button--running {
+  .ui-spinner {
+    visibility: visible;
+  }
+}
+
+.ui-button--block {
+  display: block;
+  width: 100%;
+  white-space: normal;
+}
+
+.ui-button--icon-inline {
+  .ui-text { width: auto; }
+
+  .x-icon {
+    margin-top: -2px; // optical centering
+    margin-right: 5px;
+  }
+}
+
+.ui-button--icon-segmented.ui-button--has-icon {
+  position: relative;
+  padding-left: 4rem;
+
+  .ui-button__container {
+    justify-content: space-between;
+  }
+
+  .ui-button__icon-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 4rem;
+    border-right: 1px solid $color-border;
+  }
+}
+
+// button sizes
+
+.ui-button--sm {
+  @include fs($font-size-normal);
+
+  padding: 0 0.5rem;
+  font-weight: 500;
+}
+
+.ui-button--lg {
+  padding: 1rem 10px;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 2rem;
+
+  @include bp(large) {
+    font-size: 19px;
+  }
+
+  .text--muted {
+    font-weight: 400;
+  }
+}
+
+.ui-button--xl {
+  @include fs($font-size-xlarge);
+
+  padding: 1rem 10px;
+  font-weight: 800;
+  line-height: 2rem;
+
+  .text--muted {
+    font-weight: 400;
+  }
+}
+
+// button styles
+
+.ui-button--white {
+  @include ui-btn-style(transparent, $color-white);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $button-color-white-hover-override;
+  }
+}
+
+.ui-button--blank {
+  @include ui-btn-style($button-color-blank, $button-color-blank-text);
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $button-color-blank-hover-override;
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    color: $color-silver-sand;
+
+    &.ui-button--outlined {
+      border-color: $color-silver-sand;
+    }
+  }
+
+}
+
+.ui-button--faded {
+  @include ui-btn-style($button-color-fade, $button-color-fade-text);
+}
+
+.ui-button--default {
+  @include ui-btn-style($button-color-secondary, $button-color-secondary-text);
+}
+
+.ui-button--primary {
+  @include ui-btn-style($button-color-primary, $button-color-primary-text);
+}
+
+.ui-button--destroy {
+  @include ui-btn-style($button-color-destroy, $button-color-destroy-text);
+}
+
+.ui-button--link {
+  padding-right: 0;
+  padding-left: 0;
+  background: transparent;
+  color: $color-blue;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-align: inherit;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &.is-active {
+    background: transparent;
+    // darken it more than normal because with the small, lightweight text the
+    // default `sbe-hover` rules were too subtle
+    color: sbe-hover($color-blue, $shade-amount: 12%);
+  }
+
+  &.is-disabled,
+  &:disabled {
+    color: tint($color-blue, 60%);
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  &.ui-button--destructive {
+    color: $text-color-destroy;
+
+    &:hover {
+      color: sbe-hover($text-color-destroy, $shade-amount: 12%);
+    }
+
+    &.is-disabled,
+    &:disabled {
+      color: tint($text-color-destroy, 60%);
+    }
+  }
+
+}
+
+.ui-button--inherit {
+  padding: inherit;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+}
+
+// @TODO this SHOULD BE able to share styles with ui-form... but when I tried
+// it was more work than I had time for — keith
+$btn-border-radius: 5px !default;
+
+$btn-faux-input-bg: $color-white !default;
+$btn-faux-input-color: $color-black !default;
+$btn-faux-input-active-bg: $color-blue-light-25 !default;
+$btn-faux-input-active-color: $color-blue !default;
+
+.ui-button--faux-input {
+  @include fs($font-size-large);
+
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0.5rem 10px;
+  border: 0;
+  border-radius: $btn-border-radius;
+  background: $btn-faux-input-bg;
+  color: $btn-faux-input-color;
+  font-weight: 400;
+  line-height: 2rem;
+  text-align: left;
+
+  &:hover,
+  &:active {
+    background: $btn-faux-input-bg;
+  }
+
+  &.is-active {
+    background: $btn-faux-input-active-bg;
+    color: $btn-faux-input-active-color;
+  }
+
+  > img,
+  > svg {
+    margin: 0;
+  }
+
+}

@@ -1,0 +1,65 @@
+////
+/// Placeholder classes
+///
+/// `@extend` with caution.
+///
+/// @group branding.placeholders
+////
+
+///
+/// Truncate text overflow with ellipsis
+///
+/// @example scss
+///     .element {
+///       @extend %truncate;
+///     }
+///
+/// @output
+///     .element {
+///       overflow: hidden;
+///       text-overflow: ellipsis;
+///       white-space: nowrap;
+///     }
+///
+%truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+///
+/// Extends an element's hit area maybe?
+/// @todo Find out if this is used anywhere, potentially remove.
+///
+%touch {
+  &::after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &.active::after,
+  &:active::after,
+  &:focus::after {
+    transform: scale(1.25, 1.25);
+  }
+}
+
+///
+/// Text meant only for screen readers
+///
+%visually-hidden,
+%sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

@@ -1,0 +1,79 @@
+////
+/// Common UI variables
+///
+/// @group ui.variables
+////
+
+///
+/// Active state colour
+/// @type color
+///
+$ui-color-active: $color-blue;
+
+$ui-action-sheet-padding: 15px !default;
+
+$ui-btn-border-radius: 5px !default;
+
+$button-color-white-hover-override: rgba(255, 255, 255, 0.15) !default;
+$button-color-blank-hover-override: #e5f8ff !default; // mimicks rgba(0, 186, 255, 0.1);
+
+$button-color-blank: $color-white !default;
+$button-color-blank-text: $color-blue !default;
+
+$button-color-secondary-text: $color-white !default;
+$button-color-primary-text: $color-white !default;
+$button-color-destroy-text: $color-white !default;
+
+$color-inactive: $color-secondary-dark;
+$day-width: 14.285714286%;
+$day-height: 2.5rem;
+
+$ui-form-autofill-bg: rgba(236, 255, 0, 0.25) !default;
+
+$ui-form-inline-input-background: rgba($color-black, 0.03) !default;
+$ui-form-inline-input-placeholder: $color-pale-slate !default;
+
+$ui-notification-color-bg: #f7df68;
+$ui-notification-color-text: rgba(0, 0, 0, 0.66);
+$ui-notification-color-message: #fff;
+
+$ui-overlay-background: rgba(21, 32, 36, 0.25) !default; // should maybe be $color-panel-overlay, but it's too light
+
+$time-picker-padding: 0 10px !default;
+$time-picker-background: $color-blue-light-25 !default;
+$time-picker-focussed-color: $color-blue !default;
+
+$x-icon-color-primary: $button-color-primary !default;
+$x-icon-color-active: $color-blue !default;
+
+$label-line-height: 2rem !default;
+$label-font-size: $font-size-normal !default;
+$label-font-size-large: $font-size-large !default;
+$label-hint-font-size: $font-size-small !default;
+$label-hint-line-height: 1.5rem !default;
+$label-hint-color: $color-gray-text !default;
+
+$label-transition-duration: 0.25s;
+
+$list-font-size: $font-size-normal !default;
+$list-height: 3rem !default;
+$list-line-height: 2rem !default;
+
+$list-inset-padding: 15px !default;
+
+$list-separator-color: $color-border !default;
+
+$list-active-color: $color-blue !default;
+$list-muted-color: $color-gray-text;
+
+$list-button-hover-bg: $color-gray-light !default;
+
+$list-link-color: $color-blue !default;
+$list-link-hover-bg: $color-gray-light !default;
+
+$list-link-disclosure-arrow-color: #ccc !default;
+
+$list-link-label-text-color: $color-black !default;
+
+$list-label-text-color: $color-secondary-dark !default;
+$list-label-background: $color-gray-popoverbg !default;

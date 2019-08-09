@@ -1,3 +1,10 @@
-.ui-button {
-  font-size: 32px;
-}
+// expose Sass entities to internal -ui components
+@import 'abstract/all';
+
+// render fonts and default global styles into vendor.css for consuming app
+@include showbie-global-styles();
+
+@import 'variables';
+@import 'mixins';
+
+@import 'components/ui-button'

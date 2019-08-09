@@ -1,0 +1,133 @@
+@charset 'utf-8';
+////
+/// Sass abstracts manifest
+///
+/// Parent applications should import just this file. It provides
+/// access to all the mixins, variables, etc. as well as a separate
+/// global styles mixin. External add-ons should import the various
+/// partials separately.
+///
+/// @group branding
+////
+
+@import 'functions';
+@import 'mixins';
+@import 'fonts';
+@import 'placeholders';
+@import 'variables';
+
+///
+/// Apply global styles
+///
+/// This mixin should only be included in a parent application,
+/// otherwise these styles will be duplicated in the
+/// final stylesheet.
+///
+/// @example scss
+///     @include showbie-global-styles();
+/// @output Bare element styles that sit on top of Normalize.css, as
+///         well as a few high-level utility classes.
+///
+@mixin showbie-global-styles() {
+  ///
+  /// Include Avenir web-fonts
+  ///
+  /// @see {mixin} avenir
+  ///
+  @include avenir();
+
+  ///
+  /// Root element styles
+  ///
+  /// 1. Set-up box-sizing reset.
+  /// 2. Reset `line-height` to browser default. Not ideal, but
+  ///    refactoring all the visual diffs is worse.
+  ///
+  html {
+    box-sizing: border-box; // [1]
+    font-size: $baseline;
+    line-height: initial; // [2]
+
+    @include bp(large) {
+      font-size: $baseline-lg;
+    }
+  }
+
+  ///
+  /// A better `box-sizing` best-practice
+  /// @link https://css-tricks.com/?p=175473
+  /// @link http://paulirish.com/2012/box-sizing-border-box-ftw
+  ///
+  * {
+    &,
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
+  }
+
+  body {
+    background-color: $white;
+    font-family: 'Avenir W04', 'Helvetica Neue', Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  ///
+  /// Ensure even links missing the href attribute changes the mouse
+  /// cursor on hover.
+  ///
+  a {
+    cursor: pointer;
+  }
+
+  ///
+  /// 1. Ensure buttons don't get a border-radius set by Chrome.
+  ///    @link https://www.chromestatus.com/feature/5743649186906112
+  ///
+  button {
+    border-radius: 0; /* [1] */
+  }
+
+  .show {
+    display: block !important;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
+  ///
+  /// Utility class to fully overlap an element's parent container.
+  /// Requires the parent element to have its own `position` set to
+  /// something other than `static`.
+  ///
+  .fill {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  ///
+  /// Prevent overscrolling in macOS browsers
+  ///
+  /// Stops browsers from scrolling past the start/end of the
+  /// document. Used when previewing a post with
+  /// `sbe-preview` component.
+  ///
+  .disallow-scroll {
+    &,
+    body {
+      overflow: hidden;
+    }
+  }
+
+  ///
+  /// Visibly hide an element but still expose it to screen readers.
+  ///
+  .sr-only {
+    @extend %visually-hidden;
+  }
+}

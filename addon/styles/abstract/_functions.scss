@@ -1,0 +1,92 @@
+////
+/// Custom helper functions
+///
+/// @group branding.functions
+////
+
+///
+/// Return a colour value for a given palette
+///
+/// @access public
+/// @param {string} $hue
+/// @param {string} $weight [400]
+/// @param {color} [$on-color]
+/// @return {color}
+/// @throw  If a colour cannot be found in the given colour map, an
+///         error message indicating available weights will display.
+/// @see {function} color-multiply
+/// @since 1.1.0
+///
+@function color($hue, $weight: 400, $on-color: null) {
+  $fetched-color: map-get($hue, $weight);
+
+  @if $on-color != null {
+    $fetched-color: color-multiply($fetched-color, $on-color);
+  }
+
+  @if type-of($fetched-color) == color {
+    @return $fetched-color;
+  } @else {
+    @error 'Color `#{$hue} - #{$weight}` not found. Available weights for #{$hue} are: #{available-names($hue)}';
+  }
+}
+
+///
+/// Darkens the foreground colour by the background colour
+///
+/// Provides a similar effect to the `multiply` blend-mode, although
+/// without any transparency. Good for use on solid colours.
+///
+/// @param {color} $foreground
+/// @param {color} $background [#fff]
+/// @return {color}
+/// @since 1.1.0
+///
+@function color-multiply($foreground, $background: #fff) {
+  @return $foreground * $background / 255;
+}
+
+///
+/// Slightly lighten a color
+///
+/// @access public
+/// @requires $base-tint-color - Colour to tint with
+/// @param {color} $color - Colour to tint
+/// @param {number} $percentage - % of `$color` in returned colour
+/// @return {color}
+/// @link https://css-tricks.com/snippets/sass/tint-shade-functions/
+///
+@function tint($color, $percentage) {
+  @return mix($base-tint-color, $color, $percentage);
+}
+
+///
+/// Slightly darken a color
+///
+/// @access public
+/// @requires $base-shade-color - Colour to shade with
+/// @param {color} $color - Colour to shade
+/// @param {number} $percentage - % of `$color` in returned colour
+/// @return {color}
+/// @link https://css-tricks.com/snippets/sass/tint-shade-functions/
+///
+@function shade($color, $percentage) {
+  @return mix($base-shade-color, $color, $percentage);
+}
+
+///
+/// Get a reasonable hover color
+///
+/// @access public
+/// @param {color} $color - Base colour
+/// @param {number} $shade-amount - % to modify lightness by
+/// @param {number} $sat-amount - % to modify saturation by
+/// @param {string} $shade-action - One of [darken | lighten]
+/// @param {string} $sat-action - One of [desaturate | saturate]
+/// @return {color}
+/// @since 2.1.0
+///
+@function sbe-hover($color, $shade-amount: 6%, $sat-amount: 8%, $shade-action: darken, $sat-action: desaturate) {
+  $hover-color: if($shade-action == darken, darken($color, $shade-amount), lighten($color, $shade-amount));
+  @return if($sat-action == desaturate, desaturate($hover-color, $sat-amount), saturate($hover-color, $sat-amount));
+}

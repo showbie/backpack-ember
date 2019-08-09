@@ -1,0 +1,147 @@
+////
+/// Colour palette variables
+///
+/// Provides branding & UI colour variables, a grayscale palette,
+/// and sets default utility colours for internal functions.
+///
+/// @group branding.variables
+////
+
+//
+// CONTENTS
+//
+// PRIMARY PALETTE ............. The main UI brand colours.
+// SECONDARY PALETTE ........... Complementary colours.
+// GRAYSCALE ................... Not quite 50 shades, but close.
+// UTILITY DEFAULTS ............ Defaults for functions & mixins.
+//
+
+@import 'vars.color-ntc';
+
+////
+/// Primary palette
+///
+/// @group branding.variables.color
+/// @TODO Confirm that `!default` flags can be removed from colour
+///       variables (except for utility defaults). These variables
+///       should have a single source of truth.
+////
+
+// CW:
+// This is an old-style blue that should be refreshed to match the new palette.
+// It's currently different from the new palette though (between mid and dark blue)
+// So should stay as a separate definition unless a design change is made.
+// Refreshing will require an update to the bg SVG/PNG as well.
+$color-body-legacy: $color-curious-blue-legacy;
+
+// The numeric suffix approximates opacity on `$color-blue-light`
+$color-blue-light-10: $color-alice-blue;
+$color-blue-light-25: $color-pattens-blue;
+$color-blue-light-40: $color-iceberg;
+$color-blue-light-60: $color-french-pass;
+$color-blue-light: $color-anakiwa;
+
+// NOTE: $color-blue-block and $color-blue are purposefully similar
+// For large swaths of blue, eg. backgrounds use:
+$color-blue-block: $color-picton-blue !default;
+// For text, icons, or strokes use:
+$color-blue: $color-cerulean !default;
+$color-blue-dark: $color-lochmara !default;
+
+////
+/// Secondary palette
+///
+/// @group branding.variables.color
+////
+
+////
+/// Grayscale
+///
+/// @group branding.variables.color
+////
+
+///
+/// Basic white
+///
+/// @type color
+///
+$white: #fff;
+
+///
+/// A "weight" scale map for shades of gray in the UI.
+///
+/// @type map
+/// @prop {color} gray.x00 - A shade of gray from light to dark.
+/// @since 1.1.0
+///
+$gray: (
+  100: $color-alabaster,
+  200: $color-seashell,
+  300: $color-porcelain,
+  400: $color-mercury,
+  480: $color-silver-sand--light,
+  500: $color-silver-sand,
+  600: $color-gull-gray,
+  700: $color-regent-gray,
+  800: $color-oslo-gray,
+  900: $color-rolling-stone
+);
+
+///
+/// Basic black
+///
+/// @type color
+///
+$black: #000;
+
+///
+/// Transparent
+///
+/// Seems a bit odd to have a variable for this when the
+/// `transparent` keyword could be used.
+///
+/// @type color
+///
+$transparent: rgba(0, 0, 0, 0);
+
+///
+/// @deprecated Use $gray scales instead
+///
+$gray-light: $color-alabaster !default;
+$gray-medium: $color-bombay !default;
+$gray-dark: $color-rolling-stone !default;
+
+////
+/// Utility defaults
+///
+/// @group branding.variables.color
+////
+
+///
+/// Base colour for tinting function.
+///
+/// @type color
+/// @see  {function} tint
+///
+$base-tint-color: $white !default;
+
+///
+/// Base colour for shading function.
+///
+/// @type color
+/// @see  {function} shade
+///
+$base-shade-color: $black !default;
+
+///
+/// Default colour in gradient stripe.
+///
+/// @type color
+/// @see  {mixin} gradient-striped
+///
+$gradient-striped-overlay: transparentize($white, 0.85) !default;
+
+$color-border: rgba(7, 2, 20, 0.1) !default;
+
+$color-modal-overlay: rgba(21, 32, 36, 0.33) !default;
+$color-panel-overlay: rgba(21, 32, 36, 0.1) !default;

@@ -1,0 +1,301 @@
+////
+/// Utility mixins
+///
+/// Apply common property patterns easily.
+///
+/// @group branding.mixins
+////
+
+@import 'mixins.type';
+
+///
+/// Breakpoint mixin for media queries
+///
+/// @param {string|number} $point - The min-width value to output in
+///          the media-query. String values can be one of:
+///          [small | medium | medium-large | large]
+///          Number values must include a unit such as `px`.
+/// @example scss
+///     .sidebar {
+///       width: 33%;
+///
+///       @include bp(medium) {
+///         width: 300px;
+///       }
+///     }
+///
+/// @example scss - You can also pass a custom value
+///     @include bp(400px) {
+///       width: 300px;
+///     }
+///
+@mixin bp($point) {
+  @if $point == small {
+    @media (min-width: $bp-sm) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (min-width: $bp-md) {
+      @content;
+    }
+  } @else if $point == medium-large {
+    @media (min-width: $bp-lg) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (min-width: $bp-xl) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $point) {
+      @content;
+    }
+  }
+}
+
+///
+/// Font smoothing
+///
+/// Apply rules to enable/disable better font smoothing.
+///
+/// @param {string} $value [on] - On/off switch for smoothing props.
+/// @todo "Off" properties should probably be set to `initial` for
+///       browser consistency.
+///
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  } @else {
+    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}
+
+///
+/// Resposive font-sizing
+///
+/// Set a font size with appropriate likeness on varying screen sizes.
+///
+/// @param {number} $size - Desired size at smaller breakpoints. Must
+///          include a valid font-size unit (i.e. `px`).
+/// @example scss
+///     .element {
+///       @include fs(16px);
+///     }
+///
+/// @output
+///     .comment { font-size: 16px; }
+///     @media (min-width: 1024px) {
+///       .comment { font-size: 17px; }
+///     }
+///
+@mixin fs($size) {
+  font-size: $size;
+
+  @include bp(large) {
+    font-size: $size + 1;
+  }
+}
+
+///
+/// Font weight
+///
+/// Set the font-weight. This used to update the visual weight by
+/// changing the `font-family`. No longer required — just set the
+/// `font-weight` property using the numerical scale.
+///
+/// @deprecated Just apply font-weight manually
+///
+@mixin f($weight) {
+  font-weight: $weight;
+}
+
+///
+/// Consistent transitions
+///
+/// @todo These can probably just be set as variables. No need for
+///       a mixin. Alternatively, refactor them all into a single
+///       mixin that takes the transition property as its argument.
+///
+@mixin transition-bg() {
+  transition: background 0.2s ease;
+}
+
+@mixin transition-border {
+  transition: border-color 0.2s ease;
+}
+
+@mixin transition-opacity() {
+  transition: opacity 0.2s ease;
+}
+
+@mixin transition-color() {
+  transition: color 0.2s ease;
+}
+
+@mixin transition-fill() {
+  transition: fill 0.2s ease;
+}
+
+///
+/// Button style reset
+///
+/// Reverts default `<button>` element styles.
+///
+@mixin clear-button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: 0;
+  text-align: inherit;
+}
+
+///
+/// Hide text
+/// @see {mixin} hide-text-reset
+///
+@mixin hide-text {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+
+///
+/// Screen-reader only
+/// @see {placeholder} visually-hidden
+///
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+
+///
+/// Show text
+///
+/// Reverses `hide-text`. Useful when mobile style uses `hide-text`
+/// but larger screens shouldn't.
+///
+/// @see {mixin} hide-text
+///
+@mixin hide-text-reset {
+  overflow: visible;
+  text-indent: 0;
+  white-space: normal;
+}
+
+///
+/// Apply a striped-gradient background-image
+///
+/// @param {color} $color [$gradient-striped-overlay]
+/// @param {string|number} $angle [45deg]
+/// @link https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_gradients.scss
+///
+@mixin gradient-striped($color: $gradient-striped-overlay, $angle: 45deg) {
+  background-image: linear-gradient(
+    $angle,
+    $color 25%,
+    transparent 25%,
+    transparent 50%,
+    $color 50%,
+    $color 75%,
+    transparent 75%,
+    transparent
+  );
+}
+
+///
+/// Create a triangle shape with CSS
+///
+/// @param {string} $position - One of [top | right | bottom | left]
+/// @param {color} $color - The colour of the triangle
+/// @param {number} $size - The size of the triangle, must include an
+///        appropriate unit (i.e. `px`).
+/// @link https://css-tricks.com/snippets/css/css-triangle/
+///
+@mixin triangle($position, $color, $size) {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin: -$size;
+  border: $size solid;
+
+  @if $position == top {
+    top: 0;
+    left: 50%;
+    border-top: 0;
+    border-color: $color transparent;
+  } @else if $position == right {
+    top: 50%;
+    right: 0;
+    border-right: 0;
+    border-color: transparent $color;
+  } @else if $position == bottom {
+    bottom: 0;
+    left: 50%;
+    border-bottom: 0;
+    border-color: $color transparent;
+  } @else if $position == left {
+    top: 50%;
+    left: 0;
+    border-left: 0;
+    border-color: transparent $color;
+  }
+}
+
+///
+/// Expand touch hit area
+///
+/// Can't be used for non-relatively positioned elements.
+///
+/// @param {number} $percent [10%]
+///
+@mixin expand-touch-area($percent: 10%) {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -$percent;
+    right: -$percent;
+    bottom: -$percent;
+    left: -$percent;
+  }
+}
+
+///
+/// Set SVG fill
+///
+/// Colors a nested SVG icon and transitions it on hover/focus.
+///
+/// @todo This can be simplified by setting icon `fill` property
+///       to `currentColor`. The transition will inherit from the
+///       icon's parent element.
+///
+@mixin icon-fill(
+  $fill-color: $color-primary-dark,
+  $fill-hover: $color-primary-dark-hover
+) {
+  > svg {
+    @include transition-fill();
+    fill: $fill-color;
+  }
+
+  &:hover,
+  &:focus {
+    > svg {
+      fill: $fill-hover;
+    }
+  }
+}

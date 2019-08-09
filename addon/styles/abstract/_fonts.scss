@@ -1,0 +1,104 @@
+////
+/// Font-face declarations
+///
+/// Define web-font family & weights.
+///
+/// @group branding.fonts
+////
+
+///
+/// Wrapping all the `@font-face` rules within a mixin ensures that
+/// the declarations aren't duplicated accidentally when importing
+/// the Sass in other applications.
+///
+@mixin avenir() {
+  ///
+  /// Avenir W04 35 Light
+  ///
+  @font-face {
+    font-family: 'Avenir W04';
+    font-style: normal;
+    font-weight: 300;
+    src: url('/showbie-ui/fonts/300/c886ac4d-0476-43f2-859c-69521d566f36.eot?#iefix');
+    src:
+      url('/showbie-ui/fonts/300/c886ac4d-0476-43f2-859c-69521d566f36.eot?#iefix') format('eot'),
+      url('/showbie-ui/fonts/300/bfb11081-e571-43ad-bed9-8953cfd4133e.woff2') format('woff2'),
+      url('/showbie-ui/fonts/300/e35493b4-782b-41f0-b3f0-b7e5d0ceab0b.woff') format('woff'),;
+  }
+
+  ///
+  /// Avenir W04 45 Book
+  ///
+  @font-face {
+    font-family: 'Avenir W04';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/showbie-ui/fonts/400/920c15d4-2d04-48b5-8e84-e3bf5e3828d9.eot?#iefix');
+    src:
+      url('/showbie-ui/fonts/400/920c15d4-2d04-48b5-8e84-e3bf5e3828d9.eot?#iefix') format('eot'),
+      url('/showbie-ui/fonts/400/fe2d00d9-aadd-40f7-a144-22a6f695aa8f.woff2') format('woff2'),
+      url('/showbie-ui/fonts/400/c3795fc9-e264-4795-9a19-b57086aa6f7b.woff') format('woff');
+  }
+
+  ///
+  /// Avenir W04 55 Roman
+  ///
+  @font-face {
+    font-family: 'Avenir W04';
+    font-style: normal;
+    font-weight: 500;
+    src: url('/showbie-ui/fonts/500/f7924a2e-e8f5-4ac9-b0aa-167399cc2659.eot?#iefix');
+    src:
+      url('/showbie-ui/fonts/500/f7924a2e-e8f5-4ac9-b0aa-167399cc2659.eot?#iefix') format('eot'),
+      url('/showbie-ui/fonts/500/69473750-4214-45b1-856b-06e8f8de2086.woff2') format('woff2'),
+      url('/showbie-ui/fonts/500/57cea7be-0fae-457e-83f0-b7375aabb3f9.woff') format('woff');
+  }
+
+  ///
+  /// Avenir W04 65 Medium
+  ///
+  @font-face {
+    font-family: 'Avenir W04';
+    font-style: normal;
+    font-weight: 600;
+    src: url('/showbie-ui/fonts/600/4b08ce72-f57c-4113-84ba-56062e307075.eot?#iefix');
+    src:
+      url('/showbie-ui/fonts/600/4b08ce72-f57c-4113-84ba-56062e307075.eot?#iefix') format('eot'),
+      url('/showbie-ui/fonts/600/7839a002-2019-46e4-8db8-c8335356ceee.woff2') format('woff2'),
+      url('/showbie-ui/fonts/600/28433854-a1b7-4a30-b6a4-10c3a5c75494.woff') format('woff');
+  }
+
+  ///
+  /// Avenir W04 85 Heavy
+  ///
+  @font-face {
+    font-family: 'Avenir W04';
+    font-style: normal;
+    font-weight: 800;
+    src: url('/showbie-ui/fonts/800/7ed39c78-4da5-42df-831b-798b2272d1ac.eot?#iefix');
+    src:
+      url('/showbie-ui/fonts/800/7ed39c78-4da5-42df-831b-798b2272d1ac.eot?#iefix') format('eot'),
+      url('/showbie-ui/fonts/800/e9b44b79-923f-49b3-837c-290bc70628cc.woff2') format('woff2'),
+      url('/showbie-ui/fonts/800/fbd14ec6-aa86-4ccd-af83-931d5eb79910.woff') format('woff');
+  }
+
+  ///
+  /// Avenir W04 95 Black
+  ///
+  @font-face {
+    font-family: 'Avenir W04';
+    font-style: normal;
+    font-weight: 900;
+    src: url('/showbie-ui/fonts/900/f78abaf6-0dfb-4005-ab13-c97830e204ad.eot?#iefix');
+    src:
+      url('/showbie-ui/fonts/900/f78abaf6-0dfb-4005-ab13-c97830e204ad.eot?#iefix') format('eot'),
+      url('/showbie-ui/fonts/900/ef5800d8-b76d-43e8-87ff-81d455db24c0.woff2') format('woff2'),
+      url('/showbie-ui/fonts/900/1144e594-fd94-44b6-9cf8-171075a034cc.woff') format('woff');
+  }
+
+  ///
+  /// Access tracking import. Required by font license.
+  /// @link https://www.fonts.com/web-fonts/projects#354aa19e-76b0-4fb9-96ed-6d3b55182818
+  ///
+  @import url('http://fast.fonts.net/t/1.css?apiType=css&projectid=354aa19e-76b0-4fb9-96ed-6d3b55182818');
+}

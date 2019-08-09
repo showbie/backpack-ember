@@ -1,0 +1,36 @@
+////
+/// Legacy variables
+///
+/// These are used throughout `showbie/web` and `showbie-ui`.
+/// Some of these came likely deserve to live on, either as-is
+/// or in some new incarnation.
+///
+/// @TODO Migrate all of these variables into a better location
+/// or deprecate as required.
+///
+/// @group branding.legacy
+////
+
+$color-white: $white !default;
+$color-black: $black !default;
+$color-secondary-dark: $color-silver-sand !default;
+$color-gray-popoverbg: $color-seashell !default;
+$color-gray-light: $color-alabaster !default;
+$color-gray-text: $color-bombay !default;
+
+$color-bg: #fff !default;
+$color-link: rgba(0, 0, 0, 0.75) !default;
+$color-inner: rgba(152, 159, 166, 0.5) !default;
+$color-inner-hover: rgba(152, 159, 166, 0.75) !default;
+
+$box-shadow-color: rgba(0, 0, 0, 0.2) !default; // from web/lib/post-listing
+
+$button-color-primary: #5dbe6e !default;
+$button-color-primary-hover: #54ab63 !default;
+$button-color-secondary: $color-gray-chateau !default;
+$button-color-fade: $color-seashell !default;
+$button-color-fade-text: rgba($color-bunker, 0.34) !default;
+$button-color-destroy: #f07f7f !default;
+$text-color-destroy: #eb6767 !default;
+
+$max-thumbnail-size: 52px !default;
