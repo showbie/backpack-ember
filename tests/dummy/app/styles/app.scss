@@ -1,1 +1,12 @@
-// Dummy app styles.
+// consuming applications can @import any scss file from the `addon/styles/abstract` directory
+@import '@showbie/backpack-ember/all';
+
+.sb-show-main {
+  padding: 2rem;
+  background-color: transparent !important;
+
+  .ember-application {
+    margin-top: -2px;
+    margin-left: -2px;
+  }
+}
