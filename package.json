@@ -15,7 +15,7 @@
   },
   "scripts": {
     "build": "ember build",
-    "build:storybook": "ember build && build-storybook -p 9001 -s dist --output-dir docs/storybook",
+    "build:storybook": "ember build && build-storybook --config-dir .storybook -s dist --output-dir docs/storybook",
     "format:js": "prettier-eslint '**/*.js' --write",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "prettier-eslint '**/*.js' --list-different",
