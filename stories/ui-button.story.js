@@ -18,9 +18,9 @@ appearanceOptions.forEach((style) => {
   stories.add(style, () => {
     return {
       template: hbs`
-      <UiButton @appearance={{style}}>{{style}}</UiButton>
-      <UiButton @appearance={{style}} @isDisabled={{true}}>Disabled</UiButton>
-    `,
+        <UiButton @appearance={{style}}>{{style}}</UiButton>
+        <UiButton @appearance={{style}} @isDisabled={{true}}>Disabled</UiButton>
+      `,
       context: {
         style: style,
       },
