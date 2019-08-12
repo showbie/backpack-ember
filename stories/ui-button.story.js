@@ -1,29 +1,26 @@
 import hbs from 'htmlbars-inline-precompile';
-import { storiesOf } from '@storybook/ember';
 
-const appearanceOptions = [
-  'default',
-  'primary',
-  'faded',
-  'destroy', // Change this to its own argument.
-  'blank',
-  'link',
-  'white',
-  'inherit',
-];
+function buttonExample(style) {
+  return {
+    template: hbs`
+      <UiButton @appearance={{style}}>{{style}}</UiButton>
+      <UiButton @appearance={{style}} @isDisabled={{true}}>Disabled</UiButton>
+    `,
+    context: {
+      style: style,
+    },
+  };
+}
 
-const stories = storiesOf('Button', module);
+export default {
+  title: 'Button',
+};
 
-appearanceOptions.forEach((style) => {
-  stories.add(style, () => {
-    return {
-      template: hbs`
-        <UiButton @appearance={{style}}>{{style}}</UiButton>
-        <UiButton @appearance={{style}} @isDisabled={{true}}>Disabled</UiButton>
-      `,
-      context: {
-        style: style,
-      },
-    };
-  });
-});
+export const Default = () => buttonExample('default');
+export const Primary = () => buttonExample('primary');
+export const Faded = () => buttonExample('faded');
+export const Destroy = () => buttonExample('destroy');
+export const Blank = () => buttonExample('blank');
+export const Link = () => buttonExample('link');
+export const White = () => buttonExample('white');
+export const Inherit = () => buttonExample('inherit');

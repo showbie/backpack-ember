@@ -17,9 +17,4 @@ addParameters({
 
 addDecorator(withA11y);
 
-function loadStories() {
-  let req = require.context('../stories', true, /\.story\.js$/);
-  req.keys().forEach((filename) => req(filename));
-}
-
-configure(loadStories, module);
+configure(require.context('../stories', true, /\.story\.js$/), module);
