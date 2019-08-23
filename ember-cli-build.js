@@ -1,11 +1,31 @@
 'use strict';
 
 const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
+const isProduction = EmberAddon.env() === 'production';
 const nodeSass = require('node-sass');
+const purgeCSS = {
+  module: require('@fullhuman/postcss-purgecss'),
+  options: {
+    content: [
+      // Paths to components what include Tailwind classes.
+      './addon/components/**/*.hbs',
+    ],
+    defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+  },
+};
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
-    sassOptions: { implementation: nodeSass }
+    sassOptions: { implementation: nodeSass },
+    postcssOptions: {
+      compile: {
+        plugins: [
+          require('postcss-import'),
+          require('tailwindcss')('./config/tailwind.config.js'),
+          ...(isProduction ? [purgeCSS] : []),
+        ],
+      },
+    },
   });
 
   /*
