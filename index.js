@@ -3,11 +3,18 @@
 const path = require('path');
 
 const BroccoliDebug = require('broccoli-debug');
+const writeFile = require('broccoli-file-creator');
 const Funnel = require('broccoli-funnel');
 const MergeTrees = require('broccoli-merge-trees');
-const writeFile = require('broccoli-file-creator');
+const compileCSS = require('broccoli-postcss-single');
 
 const { name, version } = require('./package.json');
+
+const PostCSSOptions = {
+  plugins: [
+    require('tailwindcss')(`${path.dirname(__filename)}/config/tailwind.js`),
+  ],
+};
 
 module.exports = {
   name,
@@ -15,6 +22,8 @@ module.exports = {
   included: function(/* app */) {
     this._super.included.apply(this, arguments);
 
+    this.import('vendor/showbie-ui/tailwind.css', { prepend: true });
+    // Including normalize.css manually because we've disabled tailwind's preflight
     this.import('vendor/normalize.css', { prepend: true });
     // see versionTree in treeForVendor
     this.import('vendor/@showbie/backpack-ember/register-version.js');
@@ -36,10 +45,18 @@ module.exports = {
       }
     );
 
+    let tailwindTree = compileCSS(
+      [this.getStylesPath()],
+      'tailwind.css',
+      `${this.name}/tailwind.css`,
+      PostCSSOptions
+    );
+
     let trees = [
       debug(vendorTree, 'vendor-input'),
       versionTree,
       normalizeTree,
+      tailwindTree,
     ].filter(Boolean);
     let mergedTrees = debug(new MergeTrees(trees), 'vendor-output');
 

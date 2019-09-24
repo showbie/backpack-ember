@@ -1,8 +1,10 @@
 dependencies:
+  '@showbie/backpack-tokens': 0.4.0
   broccoli-debug: 0.6.5
   broccoli-file-creator: 2.1.1
   broccoli-funnel: 2.0.2
   broccoli-merge-trees: 3.0.2
+  broccoli-postcss-single: 3.0.0
   classnames: 2.2.6
   ember-auto-import: 1.5.2
   ember-cli-babel: 7.11.1
@@ -14,6 +16,7 @@ dependencies:
   ember-css-modules-sass: 1.0.1
   node-sass: 4.12.0
   normalize.css: 8.0.1
+  tailwindcss: 1.1.2
 devDependencies:
   '@babel/core': 7.6.2
   '@ember/optional-features': 1.0.0
@@ -54,7 +57,6 @@ devDependencies:
   postcss-import: 12.0.1
   prettier-eslint-cli: 5.0.0
   qunit-dom: 0.9.0
-  tailwindcss: 1.1.2
 lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.5.5:
@@ -1895,6 +1897,10 @@ packages:
       react-dom: 15.x || 16.x || 16.4.0-alpha.0911da3
     resolution:
       integrity: sha512-kTaX08X4g27tzIFQGRukaHmNbtMYDS3LEWIS8+l6OayGIw6Oyo1HIF/JzeuR2FoF9z6oV+x/wJSVSq4v8tcUGQ==
+  /@showbie/backpack-tokens/0.4.0:
+    dev: false
+    resolution:
+      integrity: sha512-KbOtxy7WBSifrcI0XnpvZZT0XCJkxLCs+Nj53h73UDL+lVrg4HI+H0NatV5f/Y9ngYT0hxRmyXF4EiaggqVFAA==
   /@showbie/eslint-config/0.4.1:
     dependencies:
       prettier-eslint-cli: 5.0.0
@@ -3320,7 +3326,6 @@ packages:
       num2fraction: 1.2.2
       postcss: 7.0.18
       postcss-value-parser: 4.0.2
-    dev: true
     engines:
       node: '>=6.0.0'
     hasBin: true
@@ -4930,7 +4935,6 @@ packages:
     resolution:
       integrity: sha1-0ygVQE1olpn4Wk6k+odV3ROpYEg=
   /bytes/3.1.0:
-    dev: true
     engines:
       node: '>= 0.8'
     resolution:
@@ -5039,7 +5043,6 @@ packages:
     resolution:
       integrity: sha1-yjw2iKTpzzpM2nd9xNy8cTJJz3M=
   /camelcase-css/2.0.1:
-    dev: true
     engines:
       node: '>= 6'
     resolution:
@@ -5817,7 +5820,7 @@ packages:
     resolution:
       integrity: sha512-xYL0AMZJ4gFzJQsHUKa5jiWWi2vH77WVNg7JYRyewwj6oPh4yb/y6Y9ZCw9dsj/9UauMhtuxR+ogQd//EdEVNA==
   /css-unit-converter/1.1.1:
-    dev: true
+    dev: false
     resolution:
       integrity: sha1-2bkoGtz9jO2TW9urqDeGiX9k6ZY=
   /css-what/2.1.3:
@@ -5830,14 +5833,13 @@ packages:
     resolution:
       integrity: sha1-yBSQPkViM3GgR3tAEJqq++6t27Q=
   /cssesc/2.0.0:
-    dev: true
+    dev: false
     engines:
       node: '>=4'
     hasBin: true
     resolution:
       integrity: sha512-MsCAG1z9lPdoO/IUMLSBWBSVxVtJ1395VGIQ+Fc2gNdkQ1hNDnQdw3YhA71WJCBW1vdwA0cAnk/DnW6bqoEUYg==
   /cssesc/3.0.0:
-    dev: true
     engines:
       node: '>=4'
     hasBin: true
@@ -7903,7 +7905,6 @@ packages:
       graceful-fs: 4.2.2
       jsonfile: 4.0.0
       universalify: 0.1.2
-    dev: true
     engines:
       node: '>=6 <7 || >=8'
     resolution:
@@ -8842,7 +8843,6 @@ packages:
     resolution:
       integrity: sha512-EdDDZu4A2OyIK7Lr/2zG+w5jmbuk1DVBnEwREQvBzspBJkCEbRa8GxU1lghYcaGJCnRWibjDXlq779X1/y5xwg==
   /indexes-of/1.0.1:
-    dev: true
     resolution:
       integrity: sha1-8w9xbI4r00bHtn0985FVZqfAVgc=
   /indexof/0.0.1:
@@ -9785,7 +9785,7 @@ packages:
     resolution:
       integrity: sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
   /lodash.toarray/4.4.0:
-    dev: true
+    dev: false
     resolution:
       integrity: sha1-JMS/zWsvuji/0FlNsRedjptlZWE=
   /lodash.unescape/4.0.1:
@@ -10385,7 +10385,7 @@ packages:
   /node-emoji/1.10.0:
     dependencies:
       lodash.toarray: 4.4.0
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-Yt3384If5H6BYGVHiHwTL+99OzJKHhgp82S8/dktEK73T26BazdgZ4JZh92xSVtGNJvz9UbXdNAc5hcrXV42vw==
   /node-fetch/1.7.3:
@@ -10531,7 +10531,6 @@ packages:
     resolution:
       integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
   /normalize-range/0.1.2:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -10547,6 +10546,7 @@ packages:
     resolution:
       integrity: sha512-D6MUW4K/VzoJ4rJ01JFKxDrtY1v9wrgzCX5f2qj/lzH1m/lW6MhUZFKerVsnyjOhOsYzI9Kqqak+10l4LvLpMw==
   /normalize.css/8.0.1:
+    dev: false
     resolution:
       integrity: sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
   /npm-package-arg/6.1.1:
@@ -10581,7 +10581,6 @@ packages:
     resolution:
       integrity: sha512-WeBOdju8SnzPN5vTUJYxYUxLeXpCaVP5i5e0LF8fg7WORF2Wd7wFX/pk0tYZk7s8T+J7VLy0Da6J1+wCT0AtHg==
   /num2fraction/1.2.2:
-    dev: true
     resolution:
       integrity: sha1-b2gragJ6Tp3fpFZM0lidHU5mnt4=
   /number-is-nan/1.0.1:
@@ -11182,7 +11181,7 @@ packages:
       object-assign: 4.1.1
       postcss: 6.0.23
       postcss-value-parser: 3.3.1
-    dev: true
+    dev: false
     resolution:
       integrity: sha1-DpTQFERwCkgd4g3k1V+yZAVkJQ4=
   /postcss-import/12.0.1:
@@ -11200,7 +11199,7 @@ packages:
     dependencies:
       camelcase-css: 2.0.1
       postcss: 7.0.18
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-zS59pAk3deu6dVHyrGqmC3oDXBdNdajk4k1RyxeVXCrcEDBUBHoIhE4QTsmhxgzXxsaqFDAkUZfmMa5f/N/79w==
   /postcss-load-config/2.1.0:
@@ -11289,7 +11288,7 @@ packages:
     dependencies:
       postcss: 7.0.18
       postcss-selector-parser: 5.0.0
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-9bQFr2TezohU3KRSu9f6sfecXmf/x6RXDedl8CHF6fyuyVW7UqgNMRdWMHZQWuFY6Xqs2NYk+Fj4Z4vSOf7PQg==
   /postcss-scss/2.0.0:
@@ -11305,7 +11304,7 @@ packages:
       cssesc: 2.0.0
       indexes-of: 1.0.1
       uniq: 1.0.1
-    dev: true
+    dev: false
     engines:
       node: '>=4'
     resolution:
@@ -11315,17 +11314,14 @@ packages:
       cssesc: 3.0.0
       indexes-of: 1.0.1
       uniq: 1.0.1
-    dev: true
     engines:
       node: '>=4'
     resolution:
       integrity: sha512-36P2QR59jDTOAiIkqEprfJDsoNrvwFei3eCqKd1Y0tUsBimsq39BLp7RD+JWny3WgB1zGhJX8XVePwm9k4wdBg==
   /postcss-value-parser/3.3.1:
-    dev: true
     resolution:
       integrity: sha512-pISE66AbVkp4fDQ7VHBwRNXzAAKJjw4Vw7nWI/+Q3vuly7SNfgYXvm6i5IgFylHGK5sP/xHAbB7N49OS4gWNyQ==
   /postcss-value-parser/4.0.2:
-    dev: true
     resolution:
       integrity: sha512-LmeoohTpp/K4UiyQCwuGWlONxXamGzCMtFxLq4W1nZVGIQLYvMCJx3yAF9qyyuFpflABI9yVdtJAqbihOsCsJQ==
   /postcss/6.0.23:
@@ -11333,6 +11329,7 @@ packages:
       chalk: 2.4.2
       source-map: 0.6.1
       supports-color: 5.5.0
+    dev: false
     engines:
       node: '>=4.0.0'
     resolution:
@@ -11439,7 +11436,6 @@ packages:
     resolution:
       integrity: sha512-zf9NV1NSlDLDjycnwm6hpFATCGl/K1lt0R/GdkAK2O5LN/rwJoB+Mh93gGJjut4YbmecbfgLWVGSTCr0Ewvvbw==
   /pretty-hrtime/1.0.3:
-    dev: true
     engines:
       node: '>= 0.8'
     resolution:
@@ -12182,7 +12178,7 @@ packages:
     dependencies:
       css-unit-converter: 1.1.1
       postcss-value-parser: 3.3.1
-    dev: true
+    dev: false
     resolution:
       integrity: sha512-+l5/qlQmdsbM9h6JerJ/y5vR5Ci0k93aszLNpCmbadC3nBcbRGmIBm0s9Nj59i22LvCjTGftWzdQRwdknayxhw==
   /redux/4.0.4:
@@ -13493,7 +13489,7 @@ packages:
       postcss-selector-parser: 6.0.2
       pretty-hrtime: 1.0.3
       reduce-css-calc: 2.1.6
-    dev: true
+    dev: false
     engines:
       node: '>=8.9.0'
     hasBin: true
@@ -13864,6 +13860,9 @@ packages:
       node: '>=6'
     peerDependencies:
       typescript: '*'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
     resolution:
       integrity: sha512-1J/vefLC+BWSo+qe8OnJQfWTYRS6ingxjwqmHMqaMxXMj7kFtKLgAaYW3JeX3mktjgUL+etlU8/B4VUAUI9QGw==
   /tslib/1.10.0:
@@ -14023,7 +14022,6 @@ packages:
     resolution:
       integrity: sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg==
   /uniq/1.0.1:
-    dev: true
     resolution:
       integrity: sha1-sxxa6CVIRKOoKBVBzisEuGWnNP8=
   /unique-filename/1.1.1:
@@ -14927,6 +14925,7 @@ specifiers:
   '@ember/render-modifiers': 1.0.x
   '@fullhuman/postcss-purgecss': 1.3.x
   '@glimmer/component': 0.14.0-alpha.7
+  '@showbie/backpack-tokens': 0.4.0
   '@showbie/eslint-config': 0.4.x
   '@storybook/addon-a11y': 5.2.x
   '@storybook/addon-actions': 5.2.x
@@ -14942,6 +14941,7 @@ specifiers:
   broccoli-file-creator: 2.1.1
   broccoli-funnel: 2.0.2
   broccoli-merge-trees: 3.0.2
+  broccoli-postcss-single: 3.0.0
   classnames: 2.2.6
   ember-auto-import: 1.5.2
   ember-cli: 'github:ember-cli/ember-cli#b9c887f6b4db5389d029ef6d0d4e5b9160438b65'
@@ -14976,4 +14976,4 @@ specifiers:
   postcss-import: 12.0.x
   prettier-eslint-cli: 5.0.x
   qunit-dom: 0.9.x
-  tailwindcss: 1.1.x
+  tailwindcss: 1.1.2

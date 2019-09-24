@@ -25,10 +25,12 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "@showbie/backpack-tokens": "0.4.0",
     "broccoli-debug": "0.6.5",
     "broccoli-file-creator": "2.1.1",
     "broccoli-funnel": "2.0.2",
     "broccoli-merge-trees": "3.0.2",
+    "broccoli-postcss-single": "3.0.0",
     "classnames": "2.2.6",
     "ember-auto-import": "1.5.2",
     "ember-cli-babel": "7.11.1",
@@ -39,7 +41,8 @@
     "ember-css-modules": "1.2.1",
     "ember-css-modules-sass": "1.0.1",
     "node-sass": "4.12.0",
-    "normalize.css": "8.0.1"
+    "normalize.css": "8.0.1",
+    "tailwindcss": "1.1.2"
   },
   "devDependencies": {
     "@babel/core": "7.6.x",
@@ -80,8 +83,7 @@
     "loader.js": "4.7.x",
     "postcss-import": "12.0.x",
     "prettier-eslint-cli": "5.0.x",
-    "qunit-dom": "0.9.x",
-    "tailwindcss": "1.1.x"
+    "qunit-dom": "0.9.x"
   },
   "keywords": [
     "ember-addon"
