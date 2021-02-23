@@ -28,6 +28,25 @@
     "postpack": "ember ts:clean",
     "release": "npm run build && changeset publish"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css}": [
+      "stylelint --fix"
+    ],
+    "*.{js,ts,hbs}": [
+      "eslint --fix"
+    ],
+    "package.json": [
+      "prettier --write"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
+  },
   "dependencies": {
     "ember-cli-babel": "^7.23.1",
     "ember-cli-htmlbars": "^5.3.2",
@@ -40,6 +59,7 @@
     "@ember/test-helpers": "^2.2.0",
     "@glimmer/component": "^1.0.3",
     "@glimmer/tracking": "^1.0.3",
+    "@showbie/eslint-config": "3.0.x",
     "@types/ember-qunit": "^3.4.13",
     "@types/ember-resolver": "^5.0.10",
     "@types/ember__application": "^3.16.2",
@@ -64,7 +84,6 @@
     "@types/rsvp": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "4.15.x",
     "@typescript-eslint/parser": "4.15.x",
-    "@showbie/eslint-config": "3.0.x",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^1.10.1",
@@ -91,11 +110,11 @@
     "eslint-plugin-hbs": "1.0.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.3.1",
-    "loader.js": "^4.7.0",
-    "npm-run-all": "^4.1.5",
-    "husky": "5.0.x",
+    "husky": "4.3.x",
     "import-sort-style-python": "1.0.x",
     "lint-staged": "10.5.x",
+    "loader.js": "^4.7.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.2.1",
     "prettier-plugin-import-sort": "0.0.6",
     "prettier-plugin-packagejson": "2.2.x",
@@ -111,25 +130,6 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  },
-  "prettier": {
-    "singleQuote": true
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{css}": [
-      "stylelint --fix"
-    ],
-    "*.{js,ts,hbs}": [
-      "eslint --fix"
-    ],
-    "package.json": [
-      "prettier --write"
-    ]
   },
   "importSort": {
     ".js": {
