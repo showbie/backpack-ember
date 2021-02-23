@@ -1,11 +1,11 @@
 {
-  "name": "backpack-ember",
+  "name": "@showbie/backpack-ember",
   "version": "0.0.0",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "showbie/backpack-ember",
   "license": "MIT",
   "author": "",
   "directories": {
