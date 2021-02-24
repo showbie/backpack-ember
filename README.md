@@ -1,38 +1,19 @@
-backpack-ember
-==============================================================================
+# 🎒 Ember
 
-[Short description of the addon.]
+> Ember components for Showbie’s Backpack design system.
 
+```
+ember install @showbie/backpack-ember
+```
 
-Compatibility
-------------------------------------------------------------------------------
+## Compatibility
 
 * Ember.js v3.16 or above
 * Ember CLI v2.13 or above
 * Node.js v10 or above
 
+## Usage
 
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install backpack-ember
-```
-
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
-
-
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
-
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).

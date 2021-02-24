@@ -1,13 +1,16 @@
 {
   "name": "@showbie/backpack-ember",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember components for Showbie’s Backpack design system.",
   "keywords": [
     "ember-addon"
   ],
   "repository": "showbie/backpack-ember",
   "license": "MIT",
-  "author": "",
+  "author": "Showbie (https://www.showbie.com)",
+  "maintainers": [
+    "Jeff Nelson @stormwarning (https://www.showbie.com)"
+  ],
   "directories": {
     "doc": "doc",
     "test": "tests"
