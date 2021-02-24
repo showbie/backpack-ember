@@ -1,7 +1,7 @@
 'use strict';
 
 const browsers = [
-  'last 1 Chrome versions',
+  'Chrome >= 78',
   'last 1 Firefox versions',
   'last 1 Safari versions',
 ];
@@ -15,4 +15,10 @@ if (isCI || isProduction) {
 
 module.exports = {
   browsers,
+
+  /**
+   * Fix error with optional chaining syntax.
+   * @see https://github.com/ember-fastboot/ember-cli-fastboot/issues/791#issuecomment-695208404
+   */
+  node: 'current',
 };
