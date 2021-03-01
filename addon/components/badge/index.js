@@ -6,34 +6,36 @@ const badgeToneClasses = {
   critical: '',
 };
 
-interface BadgeArgs {
-  value?: number;
-  max?: number;
-  displayZero?: boolean;
-  tone?: keyof typeof badgeToneClasses;
-}
+// interface BadgeArgs {
+//   value?: number;
+//   max?: number;
+//   displayZero?: boolean;
+//   tone?: keyof typeof badgeToneClasses;
+// }
 
-export default class Badge extends Component<BadgeArgs> {
-  hasFormattedValue = !!this.formattedValue;
+export default class Badge extends Component {
+  get hasFormattedValue() {
+    return !!this.formattedValue;
+  }
 
-  get value(): number {
+  get value() {
     return this.args.value || 0;
   }
 
-  get max(): number {
+  get max() {
     return this.args.max || 99;
   }
 
-  get classNames(): string | undefined {
+  get classNames() {
     return this.args.tone && badgeToneClasses[this.args.tone];
   }
 
-  get formattedValue(): string | undefined {
+  get formattedValue() {
     const value = this.value * 1;
     const max = this.max * 1;
     let string;
 
-    if (isNaN(value) || isNaN(max)) return;
+    if (isNaN(value) || isNaN(max)) return undefined;
 
     if (value === Infinity) {
       string = '∞';
@@ -46,7 +48,7 @@ export default class Badge extends Component<BadgeArgs> {
     return string;
   }
 
-  constructor(owner: unknown, args: BadgeArgs) {
+  constructor(owner, args) {
     super(owner, args);
   }
 }
