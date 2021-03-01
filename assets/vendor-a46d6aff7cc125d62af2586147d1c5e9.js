@@ -4079,25 +4079,24 @@ Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var r=n.default
 Ember._setComponentManager((function(e){return new t.default(e)}),r)
 var i=r
-e.default=i})),define("@showbie/backpack-ember/components/badge/component",["exports","@glimmer/component"],(function(e,t){"use strict"
+e.default=i})),define("@showbie/backpack-ember/components/badge/index",["exports","@glimmer/component"],(function(e,t){"use strict"
 function n(e,t){for(var n=0;n<t.length;n++){var r=t[n]
 r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}function r(e,t){return(r=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e})(e,t)}function i(e){var t=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1
 if(Reflect.construct.sham)return!1
 if("function"==typeof Proxy)return!0
 try{return Boolean.prototype.valueOf.call(Reflect.construct(Boolean,[],(function(){}))),!0}catch(e){return!1}}()
-return function(){var n,r=a(e)
-if(t){var i=a(this).constructor
+return function(){var n,r=s(e)
+if(t){var i=s(this).constructor
 n=Reflect.construct(r,arguments,i)}else n=r.apply(this,arguments)
-return o(this,n)}}function o(e,t){return!t||"object"!==_typeof(t)&&"function"!=typeof t?function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
-return e}(e):t}function a(e){return(a=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var s={info:"",caution:"",critical:""},u=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
-e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&r(e,t)})(l,e)
-var t,o,a,u=i(l)
-function l(e,t){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,l),u.call(this,e,t)}return t=l,(o=[{key:"classNames",get:function(){return s[this.args.tone]}}])&&n(t.prototype,o),a&&n(t,a),l}(t.default)
-e.default=u})),define("@showbie/backpack-ember/components/badge/template",["exports"],(function(e){"use strict"
-Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var t=Ember.HTMLBars.template({id:"aP15IPzt",block:'[[[10,0],[14,0,"flex"],[12],[1,"\\n  "],[11,0],[16,0,[30,0,["classNames"]]],[17,1],[12],[1,"\\n    "],[10,0],[14,0,"font-600 text-xs leading-6 uppercase text-white badge__text"],[12],[1,"\\n      "],[18,2,null],[1,"\\n    "],[13],[1,"\\n  "],[13],[1,"\\n"],[13],[1,"\\n"]],["&attrs","&default"],false,["yield"]]',moduleName:"@showbie/backpack-ember/components/badge/template.hbs",isStrictMode:!1})
-e.default=t})),define("ember-cli-fastboot/instance-initializers/clear-double-boot",["exports"],(function(e){"use strict"
+return o(this,n)}}function o(e,t){return!t||"object"!==_typeof(t)&&"function"!=typeof t?a(e):t}function a(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
+return e}function s(e){return(s=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function u(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
+var l=Ember.HTMLBars.template({id:"W6/oX+N0",block:'[[[11,0],[16,0,[30,0,["classNames"]]],[17,1],[12],[1,"\\n  "],[10,0],[15,0,[30,0,["textClassNames"]]],[12],[1,"\\n"],[41,[30,0,["hasFormattedValue"]],[[[1,"      "],[1,[30,0,["formattedValue"]]],[1,"\\n"]],[]],[[[1,"      "],[18,2,null],[1,"\\n"]],[]]],[1,"  "],[13],[1,"\\n"],[13],[1,"\\n"]],["&attrs","&default"],false,["if","yield"]]',moduleName:"@showbie/backpack-ember/components/badge/index.hbs",isStrictMode:!1}),c={default:"bg-grey-200",info:"",caution:"",critical:""},f=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
+e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&r(e,t)})(f,e)
+var t,o,s,l=i(f)
+function f(e,t){var n
+return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,f),u(a(n=l.call(this,e,t)),"value",n.args.value||0),u(a(n),"max",n.args.max||99),u(a(n),"tone",n.args.tone||"default"),u(a(n),"hasFormattedValue",!!n.formattedValue),n}return t=f,(o=[{key:"classNames",get:function(){return["inline-flex max-w-24 px-2 rounded-full",c[this.tone]].join(" ")}},{key:"textClassNames",get:function(){return["text-xs font-800 leading-6 uppercase truncate","default"===this.tone?"text-slate-900":"text-white"].join(" ")}},{key:"formattedValue",get:function(){var e,t=1*this.value,n=1*this.max
+if(!isNaN(t)&&!isNaN(n))return t===1/0?e="∞":n<t?e="".concat(n,"+"):(0===t&&this.args.displayZero||0!==t)&&(e="".concat(t)),e}}])&&n(t.prototype,o),s&&n(t,s),f}(t.default)
+e.default=f,Ember._setComponentTemplate(l,f)})),define("ember-cli-fastboot/instance-initializers/clear-double-boot",["exports"],(function(e){"use strict"
 function t(){var e=document.getElementById("fastboot-body-start"),t=document.getElementById("fastboot-body-end")
 if(e&&t){for(var n=document.querySelectorAll('[type="fastboot/shoebox"]'),r=[],i=0;i<n.length;i++)r.push(n[i])
 var o,a=e.parentElement
@@ -4219,9 +4218,9 @@ e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,confi
 var o,a,s,u=i(l)
 function l(){return t(this,l),u.apply(this,arguments)}return o=l,(a=[{key:"titleDidUpdate",value:function(){}}])&&n(o.prototype,a),s&&n(o,s),l}()
 e.default=s})),define("ember-resolver/features",[],(function(){})),define("ember-resolver/index",["exports","ember-resolver/resolvers/classic"],(function(e,t){"use strict"
+Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"default",{enumerable:!0,get:function(){return t.default}})})),define("ember-resolver/resolver",["exports","ember-resolver/resolvers/classic"],(function(e,t){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"default",{enumerable:!0,get:function(){return t.default}})}))
-define("ember-resolver/resolver",["exports","ember-resolver/resolvers/classic"],(function(e,t){"use strict"
-Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"default",{enumerable:!0,get:function(){return t.default}})})),define("ember-resolver/resolvers/classic/container-debug-adapter",["exports","ember-resolver/resolvers/classic/index"],(function(e,t){"use strict"
+define("ember-resolver/resolvers/classic/container-debug-adapter",["exports","ember-resolver/resolvers/classic/index"],(function(e,t){"use strict"
 function n(e,t,n){var r=t.match(new RegExp("^/?"+n+"/(.+)/"+e+"$"))
 if(null!==r)return r[1]}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var r=Ember.ContainerDebugAdapter.extend({_moduleRegistry:null,init:function(){this._super.apply(this,arguments),this._moduleRegistry||(this._moduleRegistry=new t.ModuleRegistry)},canCatalogEntriesByType:function(e){return"model"===e||this._super.apply(this,arguments)},catalogEntriesByType:function(e){for(var t=this._moduleRegistry.moduleNames(),r=Ember.A(),i=this.namespace.modulePrefix,o=0,a=t.length;o<a;o++){var s=t[o]
