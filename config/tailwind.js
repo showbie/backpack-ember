@@ -5,7 +5,6 @@
  * @see https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 
-// eslint-disable-next-line node/no-unpublished-require
 const COLORS = require('@showbie/backpack-tokens').showbie.colors;
 
 module.exports = {
@@ -31,10 +30,37 @@ module.exports = {
       brand: COLORS.brand,
     },
 
-    extend: {},
+    fontFamily: {
+      sans: "'Avenir W01', 'Avenir Next W01', sans-serif",
+    },
+
+    fontMetrics: {
+      sans: {
+        capHeight: 708,
+        ascent: 940,
+        descent: -288,
+        lineGap: 0,
+        unitsPerEm: 1000,
+      },
+    },
+
+    fontSize: {
+      xs: '1rem',
+      sm: '1.08334rem',
+      base: '1.25rem',
+      md: '1.4167rem',
+      lg: '1.5rem',
+      xl: '1.75rem',
+    },
+
+    extend: {
+      maxWidth: (theme) => ({
+        ...theme('spacing'),
+      }),
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [require('tailwindcss-capsize').default({ rootSize: 12 })],
 };
