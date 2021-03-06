@@ -63,6 +63,10 @@ module.exports = {
       },
       plugins: ['node'],
       extends: ['plugin:node/recommended'],
+      rules: {
+        // https://github.com/mysticatea/eslint-plugin-node/blob/v11.1.0/docs/rules/no-unpublished-require.md
+        'node/no-unpublished-require': 'off',
+      },
     },
   ],
 };
