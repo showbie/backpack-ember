@@ -2,9 +2,9 @@ import Component from '@glimmer/component';
 
 const badgeToneClasses = {
   default: 'bg-grey-200',
-  info: '',
-  caution: '',
-  critical: '',
+  info: 'bg-blue-600',
+  caution: 'bg-yellow-100',
+  critical: 'bg-red-700',
 };
 
 interface BadgeArgs {
@@ -23,7 +23,7 @@ export default class Badge extends Component<BadgeArgs> {
 
   get classNames(): string | undefined {
     const classNames = [
-      'inline-flex max-w-24 px-2 rounded-full',
+      'inline-flex items-center h-7 min-w-7 max-w-24 px-2 rounded-full cursor-default',
       badgeToneClasses[this.tone],
     ].join(' ');
 
@@ -32,8 +32,10 @@ export default class Badge extends Component<BadgeArgs> {
 
   get textClassNames(): string {
     return [
-      'text-xs font-800 leading-6 uppercase truncate',
-      this.tone === 'default' ? 'text-slate-900' : 'text-white',
+      'text-xs font-extrabold font-800 leading-6 uppercase truncate capsize',
+      ['default', 'caution'].includes(this.tone)
+        ? 'text-slate-900'
+        : 'text-white',
     ].join(' ');
   }
 
