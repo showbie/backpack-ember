@@ -52,7 +52,17 @@
     ]
   },
   "prettier": {
-    "singleQuote": true
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.hbs",
+        "options": {
+          "htmlWhitespaceSensitivity": "css",
+          "parser": "glimmer",
+          "singleQuote": false
+        }
+      }
+    ]
   },
   "dependencies": {
     "ember-cli-babel": "7.23.1",
@@ -118,6 +128,7 @@
     "ember-source": "3.25.1",
     "ember-source-channel-url": "3.0.x",
     "ember-template-lint": "2.21.x",
+    "ember-template-lint-plugin-prettier": "2.0.0",
     "ember-try": "1.4.x",
     "eslint": "7.21.x",
     "eslint-config-prettier": "8.1.x",
@@ -132,7 +143,7 @@
     "npm-run-all": "4.1.x",
     "prember": "1.0.x",
     "prember-middleware": "0.1.0",
-    "prettier": "2.2.x",
+    "prettier": "2.2.1",
     "prettier-plugin-import-sort": "0.0.6",
     "prettier-plugin-packagejson": "2.2.x",
     "qunit": "2.14.x",
