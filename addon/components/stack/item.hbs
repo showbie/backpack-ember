@@ -1,0 +1,13 @@
+<div
+  class="flex flex-col {{@alignClass}} {{if @showDivider @spaceClass}}"
+  ...attributes
+>
+  {{#if @showDivider}}
+    <Divider />
+    <div>
+      {{yield}}
+    </div>
+  {{else}}
+    {{yield}}
+  {{/if}}
+</div>
