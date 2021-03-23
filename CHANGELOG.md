@@ -1,8 +1,7 @@
 # @showbie/backpack-ember
 
-## 0.1.0
-### Minor Changes
+## 0.1.0 — 2021-03-23
 
+#### 🎁 Added
 
-
-- [`c67b05e`](https://github.com/showbie/backpack-ember/commit/c67b05eede23dcb3f989f84b20add657bb632e2d) [#9](https://github.com/showbie/backpack-ember/pull/9) Thanks [@stormwarning](https://github.com/stormwarning)! - Add `Stack` and related components
+- Add `Stack` and related components [#9](https://github.com/showbie/backpack-ember/pull/9)
