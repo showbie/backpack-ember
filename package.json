@@ -1,6 +1,6 @@
 {
   "name": "@showbie/backpack-ember",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Ember components for Showbie’s Backpack design system.",
   "keywords": [
     "ember-addon"
