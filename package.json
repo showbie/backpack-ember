@@ -129,6 +129,7 @@
     "ember-source-channel-url": "3.0.x",
     "ember-template-lint": "2.21.x",
     "ember-template-lint-plugin-prettier": "2.0.0",
+    "ember-truth-helpers": "^3.0.0",
     "ember-try": "1.4.x",
     "eslint": "7.21.x",
     "eslint-config-prettier": "8.1.x",

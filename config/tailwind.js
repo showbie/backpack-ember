@@ -30,10 +30,6 @@ module.exports = {
       brand: COLORS.brand,
     },
 
-    fontFamily: {
-      sans: "'Avenir W01', 'Avenir Next W01', sans-serif",
-    },
-
     fontMetrics: {
       sans: {
         capHeight: 708,
@@ -54,6 +50,10 @@ module.exports = {
     },
 
     extend: {
+      fontFamily: {
+        sans: "'Avenir W01', 'Avenir Next W01', sans-serif",
+      },
+
       maxWidth: (theme) => ({
         ...theme('spacing'),
       }),

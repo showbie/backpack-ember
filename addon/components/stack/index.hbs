@@ -1,0 +1,12 @@
+<div class="{{@spaceClass}}" ...attributes>
+  {{yield
+    (hash
+      Item=(component
+        "stack/item"
+        alignClass=@alignClass
+        spaceClass=@spaceClass
+        showDivider=@showDividers
+      )
+    )
+  }}
+</div>
