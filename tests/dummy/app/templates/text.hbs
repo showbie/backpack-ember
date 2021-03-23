@@ -1,6 +1,23 @@
-<h2 class="text-4xl tracking-tight font-black text-gray-900">Text</h2>
+{{page-title "Text"}}
 
-<div class="prose prose-lg">
-  <p>This is the text component</p>
-  <Text @tagName="span">The quick brown fox jumps over the lazy dog.</Text>
-</div>
+<Stack @spaceClass="space-y-8" as |Doc|>
+  <Doc.Item>
+    <Heading>
+      Text
+    </Heading>
+  </Doc.Item>
+  <Doc.Item>
+    <div class="prose prose-lg">
+      <p>
+        This is the text component
+      </p>
+    </div>
+  </Doc.Item>
+  <Doc.Item>
+    <div class="max-w-4xl">
+      <Text @tagName="span">
+        The quick brown fox jumps over the lazy dog.
+      </Text>
+    </div>
+  </Doc.Item>
+</Stack>
