@@ -2,6 +2,7 @@ import Component from '@glimmer/component';
 
 interface TextArgs {
   tagName: string;
+  leadingClass: string;
   truncate?: boolean;
   preventSelection?: boolean;
 }
