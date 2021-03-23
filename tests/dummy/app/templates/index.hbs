@@ -1,15 +1,28 @@
-{{!-- {{page-title "Ember Components"}} --}}
+{{page-title "Ember Components"}}
 
-<h2 class="text-4xl tracking-tight font-black text-gray-900">Components</h2>
-<div class="prose prose-lg">
-  <h3 class="text-xl">
-    <LinkTo @route="badge" class="">
-      Badge
-    </LinkTo>
-  </h3>
-  <h3 class="text-xl">
-    <LinkTo @route="text" class="">
-      Text
-    </LinkTo>
-  </h3>
-</div>
+<Stack @spaceClass="space-y-8" as |Doc|>
+  <Doc.Item>
+    <Heading>
+      Components
+    </Heading>
+  </Doc.Item>
+  <Doc.Item>
+    <div class="prose prose-lg">
+      <h3 class="text-xl">
+        <LinkTo @route="badge" class="">
+          Badge
+        </LinkTo>
+      </h3>
+      <h3 class="text-xl">
+        <LinkTo @route="stack" class="">
+          Stack
+        </LinkTo>
+      </h3>
+      <h3 class="text-xl">
+        <LinkTo @route="text" class="">
+          Text
+        </LinkTo>
+      </h3>
+    </div>
+  </Doc.Item>
+</Stack>

@@ -1,12 +1,12 @@
 import Controller from '@ember/controller';
 
-export default class Badge extends Controller {
-  infinityValue = 5 / 0;
+export default class Stack extends Controller {
+  placeholderList = [1, 2, 3, 4];
 }
 
 // DO NOT DELETE: this is how TypeScript knows how to look up your controllers.
 declare module '@ember/controller' {
   interface Registry {
-    badge: Badge;
+    stack: Stack;
   }
 }
