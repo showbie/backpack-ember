@@ -133,7 +133,7 @@
     "ember-try": "1.4.x",
     "eslint": "7.21.x",
     "eslint-config-prettier": "8.1.x",
-    "eslint-plugin-ember": "10.2.x",
+    "eslint-plugin-ember": "10.3.x",
     "eslint-plugin-hbs": "1.0.0",
     "eslint-plugin-node": "11.1.x",
     "eslint-plugin-prettier": "3.3.x",
