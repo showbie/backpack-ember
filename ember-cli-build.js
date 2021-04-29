@@ -15,7 +15,7 @@ module.exports = function (defaults) {
 
     /** @see https://github.com/ef4/prember */
     prember: {
-      urls: ['/', '/badge', '/stack'],
+      urls: ['/', '/badge', '/stack', '/text'],
     },
   });
 

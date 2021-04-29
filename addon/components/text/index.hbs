@@ -1,0 +1,15 @@
+{{#let (element (or @tagName "span")) as |Tag|}}
+  <Tag
+    class="block {{@leadingClass}} capsize{{
+      if @preventSelection " select-none"
+    }}"
+  >
+    {{#if @truncate}}
+      <span class="block truncate">
+        {{yield}}
+      </span>
+    {{else}}
+      {{yield}}
+    {{/if}}
+  </Tag>
+{{/let}}

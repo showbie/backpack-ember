@@ -11,4 +11,5 @@ export default class Router extends EmberRouter {
 Router.map(function () {
   this.route('badge');
   this.route('stack');
+  this.route('text');
 });
