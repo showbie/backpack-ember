@@ -72,7 +72,7 @@
     "ember-truth-helpers": "^3.0.0"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "~0.3.0",
+    "@changesets/changelog-github": "~0.4.0",
     "@changesets/cli": "^2.14.1",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.2.5",
