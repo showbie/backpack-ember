@@ -18,6 +18,7 @@
   "scripts": {
     "build": "ember build --environment=production",
     "changeset": "changeset add",
+    "format:hbs": "prettier **/*.hbs --write",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel 'lint:!(fix)'",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
@@ -97,7 +98,7 @@
     "@types/ember__string": "^3.16.3",
     "@types/ember__template": "^3.16.1",
     "@types/ember__test": "^3.16.1",
-    "@types/ember__test-helpers": "^1.7.3",
+    "@types/ember__test-helpers": "^2.0.0",
     "@types/ember__utils": "^3.16.2",
     "@types/htmlbars-inline-precompile": "^1.0.1",
     "@types/qunit": "^2.11.1",
