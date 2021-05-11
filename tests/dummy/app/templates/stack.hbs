@@ -2,23 +2,17 @@
 
 <Stack @spaceClass="space-y-8" as |Doc|>
   <Doc.Item>
-    <Heading>
-      Stack
-    </Heading>
+    <Heading>Stack</Heading>
   </Doc.Item>
   <Doc.Item>
     <div class="prose prose-lg">
       <p>
         The most common white space on screen is between elements stacked
         vertically. Can also be used to
-        <del>
-          automatically
-        </del>
+        <del>automatically</del>
         insert dividing lines between children. Dividers can be inserted at each
         individual
-        <code>
-          Stack.Item
-        </code>
+        <code>Stack.Item</code>
         sub-component.
       </p>
     </div>
@@ -27,19 +21,13 @@
     <div class="max-w-4xl">
       <Stack @spaceClass="space-y-4" as |Stack|>
         <Stack.Item>
-          <Placeholder class="h-16">
-            Stack.Item
-          </Placeholder>
+          <Placeholder class="h-16">Stack.Item</Placeholder>
         </Stack.Item>
         <Stack.Item @showDivider={{true}}>
-          <Placeholder class="h-16">
-            Stack.Item @showDivider=true
-          </Placeholder>
+          <Placeholder class="h-16">Stack.Item @showDivider=true</Placeholder>
         </Stack.Item>
         <Stack.Item>
-          <Placeholder class="h-16">
-            Stack.Item
-          </Placeholder>
+          <Placeholder class="h-16">Stack.Item</Placeholder>
         </Stack.Item>
       </Stack>
     </div>
@@ -47,7 +35,8 @@
   <Doc.Item>
     <div class="prose prose-lg">
       <p>
-        When dealing with a large or unknown number of stack items with dividers, it may be preferable to loop through an array.
+        When dealing with a large or unknown number of stack items with
+        dividers, it may be preferable to loop through an array.
       </p>
     </div>
   </Doc.Item>
@@ -56,9 +45,7 @@
       <Stack @spaceClass="space-y-4" as |Stack|>
         {{#each this.placeholderList as |item index|}}
           <Stack.Item @showDivider={{if (eq 0 index) false true}}>
-            <Placeholder class="h-16">
-              Stack.Item
-            </Placeholder>
+            <Placeholder class="h-16">Stack.Item</Placeholder>
           </Stack.Item>
         {{/each}}
       </Stack>
@@ -68,9 +55,7 @@
     <div class="prose prose-lg">
       <p>
         Alternatively, you could enable dividers, then explicity
-        <em>
-          disable
-        </em>
+        <em>disable</em>
         the first item.
       </p>
     </div>
@@ -79,19 +64,13 @@
     <div class="max-w-4xl">
       <Stack @spaceClass="space-y-4" @showDividers={{true}} as |Stack|>
         <Stack.Item @showDivider={{false}}>
-          <Placeholder class="h-16">
-            Stack.Item @showDivider=false
-          </Placeholder>
+          <Placeholder class="h-16">Stack.Item @showDivider=false</Placeholder>
         </Stack.Item>
         <Stack.Item>
-          <Placeholder class="h-16">
-            Stack.Item
-          </Placeholder>
+          <Placeholder class="h-16">Stack.Item</Placeholder>
         </Stack.Item>
         <Stack.Item>
-          <Placeholder class="h-16">
-            Stack.Item
-          </Placeholder>
+          <Placeholder class="h-16">Stack.Item</Placeholder>
         </Stack.Item>
       </Stack>
     </div>

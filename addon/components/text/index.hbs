@@ -1,8 +1,8 @@
 {{#let (element (or @tagName "span")) as |Tag|}}
   <Tag
-    class="block {{@leadingClass}} capsize{{
-      if @preventSelection " select-none"
-    }}"
+    class="block
+      {{@leadingClass}}
+      capsize{{if @preventSelection " select-none"}}"
   >
     {{#if @truncate}}
       <span class="block truncate">

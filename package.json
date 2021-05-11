@@ -39,14 +39,11 @@
     }
   },
   "lint-staged": {
-    "*.{css}": [
-      "stylelint --fix"
-    ],
-    "*.{js,ts}": [
-      "eslint --fix"
-    ],
+    "*.{css}": "stylelint --fix",
+    "*.{js,ts}": "eslint --fix",
     "*.hbs": [
-      "ember-template-lint --fix"
+      "ember-template-lint --fix",
+      "prettier --write"
     ],
     "package.json": "prettier --write"
   },
@@ -56,8 +53,6 @@
       {
         "files": "*.hbs",
         "options": {
-          "htmlWhitespaceSensitivity": "css",
-          "parser": "glimmer",
           "singleQuote": false
         }
       }
@@ -132,7 +127,6 @@
     "ember-source": "^3.26.1",
     "ember-source-channel-url": "^3.0.0",
     "ember-template-lint": "^3.2.0",
-    "ember-template-lint-plugin-prettier": "^2.0.0",
     "ember-try": "^1.4.0",
     "eslint": "^7.23.0",
     "eslint-config-prettier": "^8.1.0",
@@ -147,7 +141,7 @@
     "npm-run-all": "^ 4.1.5",
     "prember": "^1.0.5",
     "prember-middleware": "~0.1.0",
-    "prettier": "^2.2.1",
+    "prettier": "^2.3.0",
     "prettier-plugin-import-sort": "~0.0.6",
     "prettier-plugin-packagejson": "~2.2.10",
     "qunit": "^2.14.1",
