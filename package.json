@@ -75,7 +75,7 @@
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
     "@showbie/backpack-tokens": "^2.8.0",
-    "@showbie/eslint-config": "^3.0.0",
+    "@showbie/eslint-config": "^4.0.2",
     "@tailwindcss/typography": "~0.4.0",
     "@types/ember-qunit": "^3.4.13",
     "@types/ember-resolver": "^5.0.10",
