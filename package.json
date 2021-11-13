@@ -170,6 +170,7 @@
           "@glimmer"
         ],
         "knownFirstparty": [
+          "backpack-ember",
           "dummy"
         ]
       }
@@ -182,7 +183,10 @@
           "@ember",
           "@glimmer"
         ],
-        "knownFirstparty": []
+        "knownFirstparty": [
+          "backpack-ember",
+          "dummy"
+        ]
       }
     }
   }
