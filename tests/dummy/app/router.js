@@ -12,5 +12,6 @@ Router.map(function () {
   this.route('stack');
   this.route('text');
   this.route('badge');
+  this.route('popover');
   this.route('announcement');
 });
