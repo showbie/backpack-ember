@@ -1,0 +1,23 @@
+Moo
+{{yield
+  (hash
+    isOpen=this.isOpen
+    openPopover=this.openPopover
+    closePopover=this.closePopover
+    Trigger=(component
+      "popover/trigger"
+      triggerGuid=this.triggerGuid
+      panelGuid=this.panelGuid
+      isOpen=this.isOpen
+      openPopover=this.openPopover
+      closePopover=this.closePopover
+    )
+    Panel=(component
+      "popover/panel"
+      triggerGuid=this.triggerGuid
+      panelGuid=this.panelGuid
+      isOpen=this.isOpen
+      closePopover=this.closePopover
+    )
+  )
+}}
