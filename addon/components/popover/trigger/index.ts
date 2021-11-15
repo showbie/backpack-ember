@@ -2,7 +2,7 @@ import { action } from '@ember/object';
 import { next } from '@ember/runloop';
 import Component from '@glimmer/component';
 
-import { normalizeKey } from 'backpack-ember/utils/normalize-keycode';
+import { normalizeKey } from '@showbie/backpack-ember/utils/normalize-keycode';
 
 interface TriggerArgs {
   triggerGuid: string;
