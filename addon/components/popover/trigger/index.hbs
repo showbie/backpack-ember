@@ -6,7 +6,7 @@
   aria-controls={{if @isOpen @panelGuid}}
   aria-expanded={{@isOpen}}
   ...attributes
-  {{on "click" @toggleMenu}}
+  {{on "click" @togglePopover}}
   {{on "keydown" this.handleKeydown}}
 >
   {{yield}}

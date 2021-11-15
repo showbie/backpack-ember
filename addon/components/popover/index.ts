@@ -30,6 +30,15 @@ export default class Popover extends Component<PopoverArgs> {
     elementToFocus?.focus();
   }
 
+  @action
+  togglePopover() {
+    if (this.isOpen) {
+      this.closePopover();
+    } else {
+      this.openPopover();
+    }
+  }
+
   get triggerGuid() {
     return `${this.guid}-trigger`;
   }
