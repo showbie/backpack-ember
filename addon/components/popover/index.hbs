@@ -1,4 +1,4 @@
-<PopperJS @placement="auto-end" as |reference panel|>
+<PopperJS @placement="auto-end" as |triggerRef panelRef|>
   {{yield
     (hash
       isOpen=this.isOpen
@@ -6,7 +6,7 @@
       closePopover=this.closePopover
       Trigger=(component
         "popover/trigger"
-        trigger=reference
+        triggerRef=triggerRef
         triggerGuid=this.triggerGuid
         panelGuid=this.panelGuid
         isOpen=this.isOpen
@@ -16,7 +16,7 @@
       )
       Panel=(component
         "popover/panel"
-        panel=panel
+        panelRef=panelRef
         triggerGuid=this.triggerGuid
         panelGuid=this.panelGuid
         isOpen=this.isOpen
