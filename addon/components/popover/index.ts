@@ -39,6 +39,19 @@ export default class Popover extends Component<PopoverArgs> {
     }
   }
 
+  @action
+  handleClickOutside(event: Event) {
+    const target = event.target as HTMLElement;
+
+    if (!this.isOpen) return;
+    if (this.triggerElement?.contains(target)) return;
+    if (this.panelElement?.contains(target)) return;
+
+    this.isOpen = false;
+    event.preventDefault();
+    this.triggerElement?.focus();
+  }
+
   get triggerGuid() {
     return `${this.guid}-trigger`;
   }
@@ -52,6 +65,12 @@ export default class Popover extends Component<PopoverArgs> {
     // @ts-ignore
     return typeof FastBoot === 'undefined'
       ? document.getElementById(this.triggerGuid)
+      : null;
+  }
+
+  get panelElement() {
+    return typeof FastBoot === 'undefined'
+      ? document.getElementById(this.panelGuid)
       : null;
   }
 }
