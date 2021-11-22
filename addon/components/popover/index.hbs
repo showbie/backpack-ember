@@ -1,4 +1,4 @@
-<PopperJS @placement="auto-end" as |triggerRef panelRef|>
+<PopperJS @placement="bottom-end" as |triggerRef panelRef|>
   {{yield
     (hash
       isOpen=this.isOpen
@@ -19,6 +19,7 @@
         panelRef=panelRef
         triggerGuid=this.triggerGuid
         panelGuid=this.panelGuid
+        panelElement=this.panelElement
         isOpen=this.isOpen
         closePopover=this.closePopover
       )
@@ -26,3 +27,4 @@
   }}
 </PopperJS>
 {{on-window "click" this.handleClickOutside}}
+{{on-window "focus" this.handleFocusOut}}

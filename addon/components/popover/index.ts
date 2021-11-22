@@ -7,6 +7,15 @@ interface PopoverArgs {
   className?: string;
 }
 
+/**
+ *
+ *
+ * @export
+ * @class Popover
+ * @extends {Component<PopoverArgs>}
+ * @see link to on-helper docs
+ * @see link to ember-popperjs docs
+ */
 export default class Popover extends Component<PopoverArgs> {
   guid = `${guidFor(this)}-popover`;
   @tracked isOpen = false;
@@ -50,6 +59,17 @@ export default class Popover extends Component<PopoverArgs> {
     this.isOpen = false;
     event.preventDefault();
     this.triggerElement?.focus();
+  }
+
+  @action
+  handleFocusOut(event: FocusEvent) {
+    console.log('focus event', event);
+
+    if (!this.isOpen) return;
+    if (this.triggerElement?.contains(document.activeElement)) return;
+    if (this.panelElement?.contains(document.activeElement)) return;
+
+    this.closePopover();
   }
 
   get triggerGuid() {

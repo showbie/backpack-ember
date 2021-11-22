@@ -33,6 +33,14 @@ export default class Trigger extends Component<TriggerArgs> {
           });
         }
         break;
+
+      case 'Escape':
+        if (!this.args.isOpen) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        this.args.closePopover();
+        break;
     }
   }
 }

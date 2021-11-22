@@ -4,6 +4,7 @@
     aria-labelledby={{@buttonGuid}}
     tabindex="-1"
     ...attributes
+    {{on "keyup" this.handleKeyUp}}
     {{@panelRef}}
   >
     {{yield}}
