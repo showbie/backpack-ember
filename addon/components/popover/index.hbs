@@ -1,0 +1,30 @@
+<PopperJS @placement="bottom-end" as |triggerRef panelRef|>
+  {{yield
+    (hash
+      isOpen=this.isOpen
+      openPopover=this.openPopover
+      closePopover=this.closePopover
+      Trigger=(component
+        "popover/trigger"
+        triggerRef=triggerRef
+        triggerGuid=this.triggerGuid
+        panelGuid=this.panelGuid
+        isOpen=this.isOpen
+        openPopover=this.openPopover
+        closePopover=this.closePopover
+        togglePopover=this.togglePopover
+      )
+      Panel=(component
+        "popover/panel"
+        panelRef=panelRef
+        triggerGuid=this.triggerGuid
+        panelGuid=this.panelGuid
+        panelElement=this.panelElement
+        isOpen=this.isOpen
+        closePopover=this.closePopover
+      )
+    )
+  }}
+</PopperJS>
+{{on-window "click" this.handleClickOutside}}
+{{on-window "focus" this.handleFocusOut}}

@@ -21,28 +21,13 @@
     "module": "es6",
     "experimentalDecorators": true,
     "paths": {
-      "dummy/tests/*": [
-        "tests/*"
-      ],
-      "dummy/*": [
-        "tests/dummy/app/*",
-        "app/*"
-      ],
-      "backpack-ember": [
-        "addon"
-      ],
-      "backpack-ember/*": [
-        "addon/*"
-      ],
-      "backpack-ember/test-support": [
-        "addon-test-support"
-      ],
-      "backpack-ember/test-support/*": [
-        "addon-test-support/*"
-      ],
-      "*": [
-        "types/*"
-      ]
+      "dummy/tests/*": ["tests/*"],
+      "dummy/*": ["tests/dummy/app/*", "app/*"],
+      "@showbie/backpack-ember": ["addon"],
+      "@showbie/backpack-ember/*": ["addon/*"],
+      "@showbie/backpack-ember/test-support": ["addon-test-support"],
+      "@showbie/backpack-ember/test-support/*": ["addon-test-support/*"],
+      "*": ["types/*"]
     }
   },
   "include": [

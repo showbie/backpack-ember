@@ -7,8 +7,9 @@ const CONFIG = require('../../../config/tailwind');
  * only for the dummy app.
  */
 module.exports = {
+  mode: 'jit',
   purge: {
-    ...CONFIG.purge,
+    content: [...CONFIG.purge.content, 'tests/dummy/**/*.{js,ts,hbs}'],
   },
 
   darkMode: CONFIG.darkMode,
@@ -26,6 +27,7 @@ module.exports = {
         yellow: {
           100: '#faf0a6',
         },
+        twblue: TWCOLORS.blue,
       },
       fontSize: {
         '3xl': '1.875rem',

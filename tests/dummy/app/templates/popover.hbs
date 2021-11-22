@@ -1,0 +1,44 @@
+{{page-title "Popover"}}
+
+<Stack @spaceClass="space-y-8" as |Doc|>
+  <Doc.Item>
+    <Heading>Popover</Heading>
+  </Doc.Item>
+  <Doc.Item>
+    <Popover as |popover|>
+      <popover.Trigger
+        class="text-white group bg-gray-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus:ring-2 focus:ring-twblue-500 focus:ring-opacity-75"
+      >Open popover</popover.Trigger>
+      <popover.Panel
+        class="absolute z-10 w-screen max-w-sm px-4 transform -translate-x-1/2 left-1/2 sm:px-0 lg:max-w-3xl"
+      >
+        <div
+          class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+        >
+          <div class="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
+            Welcome to popover country.
+          </div>
+          <div className="p-4 bg-gray-50">
+            <a
+              href="##"
+              className="flow-root px-2 py-2 transition duration-150 ease-in-out rounded-md hover:bg-gray-100 focus:outline-none focus:ring focus:ring-twblue-500 focus:ring-opacity-50"
+            >
+              <span className="flex items-center">
+                <span className="text-sm font-medium text-gray-900">
+                  Documentation
+                </span>
+              </span>
+              <span className="block text-sm text-gray-500">
+                Start integrating products and tools
+              </span>
+            </a>
+          </div>
+        </div>
+      </popover.Panel>
+    </Popover>
+    <button
+      class="text-white group bg-gray-700 px-3 py-2 rounded-md inline-flex items-center text-base font-medium hover:text-opacity-100 focus:outline-none focus:ring-2 focus:ring-twblue-500 focus:ring-opacity-75"
+      type="button"
+    >Button</button>
+  </Doc.Item>
+</Stack>
